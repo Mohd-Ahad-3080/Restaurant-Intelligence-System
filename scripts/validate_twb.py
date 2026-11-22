@@ -111,10 +111,22 @@ def resolve_document(doc: etree._ElementTree, enabled: set[str]) -> None:
                     el.set(m.group(3), v)
 
 
-def validate(path: Path) -> list[str]:
+def _schema_resources() -> dict[str, bytes]:
+    """Find the resource bundle containing all required schemas.
+
+    Tableau may ship localized bundles without workbook XSD resources.
+    """
+    for candidate in RCC_CANDIDATES:
+        files = read_rcc(candidate, NEEDED)
+        if all(key in files for key in NEEDED):
+            return files
     if not RCC_CANDIDATES:
         raise SystemExit("Tableau Public is not installed (no tablangres.rcc found).")
-    files = read_rcc(RCC_CANDIDATES[0], NEEDED)
+    raise SystemExit("No Tableau tablangres.rcc bundle contains all required workbook schemas.")
+
+
+def validate(path: Path) -> list[str]:
+    files = _schema_resources()
     doc = etree.parse(str(path))
     enabled = manifest_flags(doc)
     resolve_document(doc, enabled)
