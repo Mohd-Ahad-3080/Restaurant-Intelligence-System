@@ -1,0 +1,3 @@
+model,features,test_accuracy,test_f1_macro,test_roc_auc_ovr_macro
+"Gradient Boosting (honest, 34 features)",34,0.613099257258609,0.6105715721749477,0.7945942075957744
+"Leaky model (illustration only): + votes, aggregate_rating",36,0.987846049966239,0.9878128428393089,0.9996428257031699

@@ -1,0 +1,194 @@
+feature,importance_mean,importance_std,variant,rank
+latitude,0.07729137499869258,0.0060983814824567386,"Main (all countries, all features)",1
+city_group,0.07324668640430496,0.005849390712614449,"Main (all countries, all features)",2
+cost_pct_in_country,0.060293168379532455,0.008525760251499339,"Main (all countries, all features)",3
+longitude,0.05036961452105844,0.0064608263778137805,"Main (all countries, all features)",4
+log_locality_size,0.0362637177449639,0.004123785140299478,"Main (all countries, all features)",5
+has_online_delivery,0.03330749967426729,0.00843659656809411,"Main (all countries, all features)",6
+price_range,0.013535942588565253,0.0036227734879101,"Main (all countries, all features)",7
+log_branch_count,0.012451396689264194,0.004485153869370805,"Main (all countries, all features)",8
+has_valid_coords,0.010447441338904106,0.0015591479140685204,"Main (all countries, all features)",9
+n_cuisines,0.007877247711396007,0.004035038623081553,"Main (all countries, all features)",10
+country,0.0055722499308240026,0.0021911107422896534,"Main (all countries, all features)",11
+cuisine_north_indian,0.005116542055803308,0.0020759581285139934,"Main (all countries, all features)",12
+cuisine_fast_food,0.0039233775171304665,0.001637021172900902,"Main (all countries, all features)",13
+cuisine_street_food,0.003293439174626023,0.0016361101261545797,"Main (all countries, all features)",14
+cuisine_bakery,0.003093204160047025,0.0013638859454401745,"Main (all countries, all features)",15
+cuisine_mughlai,0.002743613398893352,0.0016553673664151827,"Main (all countries, all features)",16
+cuisine_cafe,0.0021904191108131797,0.0024889023437772023,"Main (all countries, all features)",17
+cuisine_pizza,0.001771562706211105,0.0008277052616023726,"Main (all countries, all features)",18
+cuisine_chinese,0.0016537787886461096,0.0009341371524032412,"Main (all countries, all features)",19
+cuisine_italian,0.0012882151293422516,0.0021703354373105027,"Main (all countries, all features)",20
+cuisine_thai,0.0008705338280241892,0.00048353444710085675,"Main (all countries, all features)",21
+cuisine_ice_cream,0.0006771105229390173,0.0009608166987232021,"Main (all countries, all features)",22
+cuisine_continental,0.0005432592445357876,0.0010836133995311198,"Main (all countries, all features)",23
+cuisine_mexican,0.0002626680854014185,0.0004615835189014578,"Main (all countries, all features)",24
+cuisine_south_indian,0.00022294227768254737,0.0013784503885925425,"Main (all countries, all features)",25
+cuisine_beverages,0.00014303922152431037,0.0002867006926766662,"Main (all countries, all features)",26
+is_cost_outlier,6.032238855596672e-05,0.00018096716566790017,"Main (all countries, all features)",27
+cuisine_desserts,-0.0001569366810937889,0.0013291552354379296,"Main (all countries, all features)",28
+is_delivering_now,-0.0005137971118482687,0.0006181999670426704,"Main (all countries, all features)",29
+cuisine_american,-0.000638802726837795,0.0011295622743353543,"Main (all countries, all features)",30
+cuisine_mithai,-0.0007021116326758947,0.0013525333008406052,"Main (all countries, all features)",31
+cuisine_asian,-0.0009229694213611194,0.0011514942681278067,"Main (all countries, all features)",32
+has_table_booking,-0.0017501769452824445,0.0015844724798252416,"Main (all countries, all features)",33
+cuisine_burger,-0.002418500994996464,0.0016187667253873108,"Main (all countries, all features)",34
+cost_pct_in_country,0.06486134865902278,0.0083491610734085,No location (all countries),1
+has_online_delivery,0.030216247473321595,0.006076517607157885,No location (all countries),2
+price_range,0.023681877690723125,0.004401566097902133,No location (all countries),3
+cuisine_cafe,0.009266316893558857,0.0030528154641604314,No location (all countries),4
+log_branch_count,0.00872289617322572,0.0045724411633607034,No location (all countries),5
+cuisine_north_indian,0.00577506083986512,0.004980041288214781,No location (all countries),6
+n_cuisines,0.005564244707264526,0.006181639887654169,No location (all countries),7
+has_table_booking,0.005301835744982631,0.0035694756162872993,No location (all countries),8
+cuisine_bakery,0.005209476696829096,0.0031186259294962303,No location (all countries),9
+cuisine_pizza,0.0042715724256013,0.001976977617765141,No location (all countries),10
+cuisine_burger,0.002330460412044699,0.0017800339585451754,No location (all countries),11
+cuisine_mexican,0.0017258822048485944,0.0010857084634295262,No location (all countries),12
+cuisine_chinese,0.0011856310155722416,0.003292762913286463,No location (all countries),13
+cuisine_mughlai,0.0011798916457847585,0.003476405605403739,No location (all countries),14
+cuisine_american,0.0010805577173651937,0.0013041110132303384,No location (all countries),15
+cuisine_desserts,0.0010790296704389468,0.0015101920543010108,No location (all countries),16
+cuisine_fast_food,0.0010555772473960334,0.001375588181669358,No location (all countries),17
+cuisine_ice_cream,0.00027119687499244094,0.0010688957056838174,No location (all countries),18
+cuisine_south_indian,0.00021736107875697241,0.0034010522417846243,No location (all countries),19
+cuisine_italian,0.0001774407441690995,0.001800753272605569,No location (all countries),20
+is_cost_outlier,2.1252210740119182e-05,0.0018231486036421702,No location (all countries),21
+cuisine_mithai,-0.0002446662431263791,0.002556783835136634,No location (all countries),22
+cuisine_beverages,-0.00040370912707849983,0.0011298587459274002,No location (all countries),23
+cuisine_street_food,-0.0005234518850769865,0.0014233435532177237,No location (all countries),24
+is_delivering_now,-0.0014175908994425667,0.0007737806249815669,No location (all countries),25
+cuisine_thai,-0.0019162252178241523,0.0005977489395792327,No location (all countries),26
+cuisine_asian,-0.0022844827016875293,0.001469176026674155,No location (all countries),27
+cuisine_continental,-0.003733904423753398,0.0032312278663389183,No location (all countries),28
+cost_pct_in_country,0.06658670139289373,0.006632776622150539,"India, with city/locality",1
+longitude,0.06601273449136158,0.006480146125759395,"India, with city/locality",2
+has_online_delivery,0.04163881855092322,0.00640113145900363,"India, with city/locality",3
+latitude,0.040047083338373056,0.005750946335157037,"India, with city/locality",4
+log_locality_size,0.03828692282437256,0.0065951633219362765,"India, with city/locality",5
+city_group,0.017799468619704162,0.004958811133886181,"India, with city/locality",6
+n_cuisines,0.01597014305328337,0.004870578527450195,"India, with city/locality",7
+log_branch_count,0.014249122054291064,0.004930771299839245,"India, with city/locality",8
+price_range,0.007425298851200146,0.0028395847344403293,"India, with city/locality",9
+cuisine_italian,0.005137361554308306,0.002355940032594375,"India, with city/locality",10
+has_valid_coords,0.003911912220295422,0.003973928956074921,"India, with city/locality",11
+cuisine_beverages,0.001995442240255918,0.0007129836377929684,"India, with city/locality",12
+cuisine_american,0.0016539227763383902,0.0009597598563220028,"India, with city/locality",13
+cuisine_pizza,0.001416928358925651,0.0009620465588587985,"India, with city/locality",14
+cuisine_street_food,0.0014105146134601898,0.0016206548685524125,"India, with city/locality",15
+cuisine_south_indian,0.0012244192537272935,0.0020677317094365665,"India, with city/locality",16
+has_table_booking,0.0010525018384164198,0.001383240193076428,"India, with city/locality",17
+cuisine_cafe,0.0009036061535163453,0.0012932689258753768,"India, with city/locality",18
+cuisine_continental,0.0005187658519662409,0.0015490982347860108,"India, with city/locality",19
+cuisine_mexican,0.0003804503803360837,0.001272083201784451,"India, with city/locality",20
+cuisine_mughlai,0.0001704570457056187,0.0019405416958940727,"India, with city/locality",21
+cuisine_bakery,-3.9185816968478895e-05,0.0011241157620623344,"India, with city/locality",22
+is_cost_outlier,-8.599454841298204e-05,0.00025798364523894614,"India, with city/locality",23
+cuisine_mithai,-0.00014985379040932667,0.0012667046518805996,"India, with city/locality",24
+is_delivering_now,-0.00015913733851335987,0.00032045255634888687,"India, with city/locality",25
+cuisine_desserts,-0.0004481647658740484,0.000972855206195794,"India, with city/locality",26
+cuisine_chinese,-0.0005016025472784124,0.0016844946650509738,"India, with city/locality",27
+cuisine_thai,-0.0005437458468774969,0.0011530357429128642,"India, with city/locality",28
+cuisine_fast_food,-0.0009504976157052369,0.0022408273103017014,"India, with city/locality",29
+cuisine_ice_cream,-0.001240792223884124,0.0016520503691764758,"India, with city/locality",30
+cuisine_asian,-0.0017320266325708267,0.0016586517848377752,"India, with city/locality",31
+cuisine_burger,-0.0033337783890684536,0.0019556856065850795,"India, with city/locality",32
+cuisine_north_indian,-0.0047772952014187966,0.003834767866507693,"India, with city/locality",33
+cost_pct_in_country,0.12908851561343906,0.006342855735544514,"India, without city/locality",1
+price_range,0.08827130101907296,0.00679637382340086,"India, without city/locality",2
+has_online_delivery,0.05088607509832368,0.0072217009885838035,"India, without city/locality",3
+n_cuisines,0.024703480587018045,0.00849675990044758,"India, without city/locality",4
+log_branch_count,0.0191065514595804,0.007159574344180232,"India, without city/locality",5
+cuisine_north_indian,0.01480224668536224,0.004736192640401239,"India, without city/locality",6
+cuisine_cafe,0.007264142735343726,0.00388163818608748,"India, without city/locality",7
+cuisine_bakery,0.007022683708722832,0.003859082376253284,"India, without city/locality",8
+cuisine_chinese,0.00622090806891199,0.003237952826575217,"India, without city/locality",9
+cuisine_continental,0.005468988316320278,0.002958934287912566,"India, without city/locality",10
+cuisine_italian,0.004257835917075204,0.0019473524172242203,"India, without city/locality",11
+cuisine_fast_food,0.0037809383606581147,0.001305027118057808,"India, without city/locality",12
+cuisine_street_food,0.0030974294672908576,0.003237756634080695,"India, without city/locality",13
+cuisine_desserts,0.002402017793049371,0.002853257680791229,"India, without city/locality",14
+has_table_booking,0.002114623006474381,0.0031927339496840425,"India, without city/locality",15
+cuisine_thai,0.0015993465808526231,0.0020346678869639307,"India, without city/locality",16
+cuisine_american,0.0008370097080786399,0.001050589996851857,"India, without city/locality",17
+cuisine_mexican,0.000647370890205079,0.0011495556191229255,"India, without city/locality",18
+is_delivering_now,0.0006077763698042471,0.00047199634072135697,"India, without city/locality",19
+cuisine_pizza,0.000571715761659608,0.002045550310956055,"India, without city/locality",20
+cuisine_beverages,0.00012293321873192432,0.0018249907138447473,"India, without city/locality",21
+cuisine_mughlai,7.179130827604796e-05,0.003196682205668539,"India, without city/locality",22
+cuisine_asian,-0.00014205633493407087,0.0019082861991256937,"India, without city/locality",23
+cuisine_south_indian,-0.00027110589945743556,0.0020016337937236173,"India, without city/locality",24
+is_cost_outlier,-0.0005475144932999831,0.001022478647087466,"India, without city/locality",25
+cuisine_ice_cream,-0.0005874819223680606,0.0028768278109963423,"India, without city/locality",26
+cuisine_burger,-0.0005952801631685766,0.0013386407822300799,"India, without city/locality",27
+cuisine_mithai,-0.003009816746544125,0.0018634710336236403,"India, without city/locality",28
+country,0.0,0.0,Baseline (majority class),1
+city_group,0.0,0.0,Baseline (majority class),2
+price_range,0.0,0.0,Baseline (majority class),3
+cost_pct_in_country,0.0,0.0,Baseline (majority class),4
+is_cost_outlier,0.0,0.0,Baseline (majority class),5
+has_table_booking,0.0,0.0,Baseline (majority class),6
+has_online_delivery,0.0,0.0,Baseline (majority class),7
+is_delivering_now,0.0,0.0,Baseline (majority class),8
+n_cuisines,0.0,0.0,Baseline (majority class),9
+latitude,0.0,0.0,Baseline (majority class),10
+longitude,0.0,0.0,Baseline (majority class),11
+has_valid_coords,0.0,0.0,Baseline (majority class),12
+log_branch_count,0.0,0.0,Baseline (majority class),13
+log_locality_size,0.0,0.0,Baseline (majority class),14
+cuisine_north_indian,0.0,0.0,Baseline (majority class),15
+cuisine_chinese,0.0,0.0,Baseline (majority class),16
+cuisine_fast_food,0.0,0.0,Baseline (majority class),17
+cuisine_mughlai,0.0,0.0,Baseline (majority class),18
+cuisine_italian,0.0,0.0,Baseline (majority class),19
+cuisine_bakery,0.0,0.0,Baseline (majority class),20
+cuisine_continental,0.0,0.0,Baseline (majority class),21
+cuisine_cafe,0.0,0.0,Baseline (majority class),22
+cuisine_desserts,0.0,0.0,Baseline (majority class),23
+cuisine_south_indian,0.0,0.0,Baseline (majority class),24
+cuisine_street_food,0.0,0.0,Baseline (majority class),25
+cuisine_american,0.0,0.0,Baseline (majority class),26
+cuisine_pizza,0.0,0.0,Baseline (majority class),27
+cuisine_mithai,0.0,0.0,Baseline (majority class),28
+cuisine_burger,0.0,0.0,Baseline (majority class),29
+cuisine_thai,0.0,0.0,Baseline (majority class),30
+cuisine_asian,0.0,0.0,Baseline (majority class),31
+cuisine_beverages,0.0,0.0,Baseline (majority class),32
+cuisine_ice_cream,0.0,0.0,Baseline (majority class),33
+cuisine_mexican,0.0,0.0,Baseline (majority class),34
+votes,0.6608917417473629,0.009474859049927353,Leaky: + votes and rating (INVALID),1
+country,0.08555710746402603,0.004743614157655426,Leaky: + votes and rating (INVALID),2
+longitude,0.011023105001616362,0.0011352910211827932,Leaky: + votes and rating (INVALID),3
+log_locality_size,0.00038760164778969266,0.0006186435637764582,Leaky: + votes and rating (INVALID),4
+cuisine_desserts,0.00013427508424544986,0.0002698372082775589,Leaky: + votes and rating (INVALID),5
+cuisine_mithai,0.0,0.0,Leaky: + votes and rating (INVALID),6
+city_group,0.0,0.0,Leaky: + votes and rating (INVALID),7
+cuisine_burger,0.0,0.0,Leaky: + votes and rating (INVALID),8
+n_cuisines,0.0,0.0,Leaky: + votes and rating (INVALID),9
+cuisine_chinese,0.0,0.0,Leaky: + votes and rating (INVALID),10
+is_delivering_now,0.0,0.0,Leaky: + votes and rating (INVALID),11
+is_cost_outlier,0.0,0.0,Leaky: + votes and rating (INVALID),12
+cuisine_italian,0.0,0.0,Leaky: + votes and rating (INVALID),13
+cuisine_mughlai,0.0,0.0,Leaky: + votes and rating (INVALID),14
+cuisine_bakery,0.0,0.0,Leaky: + votes and rating (INVALID),15
+cuisine_fast_food,0.0,0.0,Leaky: + votes and rating (INVALID),16
+cuisine_continental,0.0,0.0,Leaky: + votes and rating (INVALID),17
+cuisine_cafe,0.0,0.0,Leaky: + votes and rating (INVALID),18
+log_branch_count,0.0,0.0,Leaky: + votes and rating (INVALID),19
+has_online_delivery,0.0,0.0,Leaky: + votes and rating (INVALID),20
+cuisine_beverages,0.0,0.0,Leaky: + votes and rating (INVALID),21
+cuisine_ice_cream,0.0,0.0,Leaky: + votes and rating (INVALID),22
+cuisine_asian,0.0,0.0,Leaky: + votes and rating (INVALID),23
+cuisine_thai,0.0,0.0,Leaky: + votes and rating (INVALID),24
+cuisine_street_food,0.0,0.0,Leaky: + votes and rating (INVALID),25
+cuisine_american,0.0,0.0,Leaky: + votes and rating (INVALID),26
+cuisine_pizza,0.0,0.0,Leaky: + votes and rating (INVALID),27
+cuisine_south_indian,0.0,0.0,Leaky: + votes and rating (INVALID),28
+cuisine_mexican,0.0,0.0,Leaky: + votes and rating (INVALID),29
+has_table_booking,-6.739701891640415e-05,0.00020219105674921246,Leaky: + votes and rating (INVALID),30
+has_valid_coords,-6.739701891640415e-05,0.00020219105674921246,Leaky: + votes and rating (INVALID),31
+latitude,-0.0001253767083557955,0.00027169416043908433,Leaky: + votes and rating (INVALID),32
+price_range,-0.0002695880756656166,0.0003301766130597916,Leaky: + votes and rating (INVALID),33
+cuisine_north_indian,-0.0003369735423768838,0.0003369735423768838,Leaky: + votes and rating (INVALID),34
+cost_pct_in_country,-0.0006765453792044407,0.0006051227651951397,Leaky: + votes and rating (INVALID),35
+aggregate_rating,-0.0006817947770890731,0.0,Leaky: + votes and rating (INVALID),36

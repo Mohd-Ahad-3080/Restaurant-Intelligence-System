@@ -1,0 +1,28 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["confusion_matrix","feature_importance","model_comparison","model_metrics_long","popularity_classes","predictions","restaurant_cuisines","restaurants","robustness_checks"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table confusion_matrix
+ref table feature_importance
+ref table model_comparison
+ref table model_metrics_long
+ref table popularity_classes
+ref table predictions
+ref table restaurant_cuisines
+ref table restaurants
+ref table robustness_checks
+ref table services
+
+ref cultureInfo en-US
+

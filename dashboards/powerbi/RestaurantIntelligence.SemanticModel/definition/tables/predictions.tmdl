@@ -1,0 +1,146 @@
+table predictions
+	lineageTag: b4928596-e85f-4371-87dd-079b929792bb
+
+	measure 'Predicted Class Color' = SELECTEDVALUE ( predictions[predicted_color], "#5C5C66" )
+		lineageTag: 7e8b39a1-9f98-5659-a4ed-9258c6b9992d
+
+	measure 'Predicted Restaurants' = COUNTROWS ( predictions )
+		formatString: #,0
+		lineageTag: ecf62cc4-3b83-5aac-b7f6-b7fc94ef5609
+
+	measure 'Prediction Agreement %' = AVERAGE ( predictions[correct] )
+		formatString: 0.0%
+		lineageTag: 216b7ee1-925d-50e9-a469-8c1726c85030
+
+	measure 'Title p4_predicted_split' = IF ( ISBLANK ( [Predicted Restaurants] ), "No data for this selection", "Predicted popularity class (rated restaurants)" )
+		lineageTag: d5cae9ce-452e-59e0-9b34-0131d411d063
+
+	column restaurant_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 44822608-0cce-430d-97d0-e7f5234959f8
+		summarizeBy: none
+		sourceColumn: restaurant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_class
+		dataType: string
+		lineageTag: d448e330-bce2-4902-b033-0d57fcb93b0c
+		summarizeBy: none
+		sourceColumn: actual_class
+		sortByColumn: actual_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column predicted_class
+		dataType: string
+		lineageTag: 111f6ae6-009f-4c11-b098-897df5ff7371
+		summarizeBy: none
+		sourceColumn: predicted_class
+		sortByColumn: predicted_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column prob_low
+		dataType: double
+		lineageTag: af7f683d-b8b2-43ab-b92e-5cce4008f323
+		summarizeBy: sum
+		sourceColumn: prob_low
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column prob_medium
+		dataType: double
+		lineageTag: 63bf35b0-b058-4ed4-9a5a-909a43678bd0
+		summarizeBy: sum
+		sourceColumn: prob_medium
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column prob_high
+		dataType: double
+		lineageTag: 1ea37695-3296-4238-b104-f1fd0ffab6dc
+		summarizeBy: sum
+		sourceColumn: prob_high
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column split
+		dataType: string
+		lineageTag: dbf02343-6ab0-441a-a2b8-fcf848a3aa78
+		summarizeBy: none
+		sourceColumn: split
+
+		annotation SummarizationSetBy = Automatic
+
+	column correct
+		dataType: int64
+		formatString: 0
+		lineageTag: 551721c3-17ad-483c-9ad7-abde4889a0b6
+		summarizeBy: sum
+		sourceColumn: correct
+
+		annotation SummarizationSetBy = Automatic
+
+	column model
+		dataType: string
+		lineageTag: 1b87a12c-6526-4aeb-801a-2d55ccc68486
+		summarizeBy: none
+		sourceColumn: model
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 9314470a-0358-4ced-9246-8a55f5739e90
+		summarizeBy: sum
+		sourceColumn: actual_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column predicted_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 30ae3a4d-cc92-45d8-bae3-796010fe119a
+		summarizeBy: sum
+		sourceColumn: predicted_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column predicted_color
+		dataType: string
+		lineageTag: d6b3afbd-7221-48c0-810b-ad6661d561f7
+		summarizeBy: none
+		sourceColumn: predicted_color
+
+		annotation SummarizationSetBy = Automatic
+
+	column result
+		dataType: string
+		lineageTag: 033793ea-1fc4-49dc-a9f6-ace7e7ac8385
+		summarizeBy: none
+		sourceColumn: result
+
+		annotation SummarizationSetBy = Automatic
+
+	partition predictions = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("D:\restaurant-intelligence\dashboards\powerbi\powerbi_data.xlsx"), null, true),
+				    predictions_Sheet = Source{[Item="predictions",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(predictions_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"restaurant_id", Int64.Type}, {"actual_class", type text}, {"predicted_class", type text}, {"prob_low", type number}, {"prob_medium", type number}, {"prob_high", type number}, {"split", type text}, {"correct", Int64.Type}, {"model", type text}, {"actual_order", Int64.Type}, {"predicted_order", Int64.Type}, {"predicted_color", type text}, {"result", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,55 @@
+variant,actual,predicted,count
+"Main (all countries, all features)",Low,Low,329
+"Main (all countries, all features)",Low,Medium,122
+"Main (all countries, all features)",Low,High,46
+"Main (all countries, all features)",Medium,Low,132
+"Main (all countries, all features)",Medium,Medium,231
+"Main (all countries, all features)",Medium,High,126
+"Main (all countries, all features)",High,Low,41
+"Main (all countries, all features)",High,Medium,106
+"Main (all countries, all features)",High,High,348
+No location (all countries),Low,Low,299
+No location (all countries),Low,Medium,126
+No location (all countries),Low,High,72
+No location (all countries),Medium,Low,175
+No location (all countries),Medium,Medium,174
+No location (all countries),Medium,High,140
+No location (all countries),High,Low,77
+No location (all countries),High,Medium,122
+No location (all countries),High,High,296
+"India, with city/locality",Low,Low,326
+"India, with city/locality",Low,Medium,89
+"India, with city/locality",Low,High,23
+"India, with city/locality",Medium,Low,132
+"India, with city/locality",Medium,Medium,200
+"India, with city/locality",Medium,High,98
+"India, with city/locality",High,Low,35
+"India, with city/locality",High,Medium,111
+"India, with city/locality",High,High,289
+"India, without city/locality",Low,Low,294
+"India, without city/locality",Low,Medium,105
+"India, without city/locality",Low,High,39
+"India, without city/locality",Medium,Low,151
+"India, without city/locality",Medium,Medium,179
+"India, without city/locality",Medium,High,100
+"India, without city/locality",High,Low,52
+"India, without city/locality",High,Medium,111
+"India, without city/locality",High,High,272
+Baseline (majority class),Low,Low,497
+Baseline (majority class),Low,Medium,0
+Baseline (majority class),Low,High,0
+Baseline (majority class),Medium,Low,489
+Baseline (majority class),Medium,Medium,0
+Baseline (majority class),Medium,High,0
+Baseline (majority class),High,Low,495
+Baseline (majority class),High,Medium,0
+Baseline (majority class),High,High,0
+Leaky: + votes and rating (INVALID),Low,Low,492
+Leaky: + votes and rating (INVALID),Low,Medium,5
+Leaky: + votes and rating (INVALID),Low,High,0
+Leaky: + votes and rating (INVALID),Medium,Low,6
+Leaky: + votes and rating (INVALID),Medium,Medium,479
+Leaky: + votes and rating (INVALID),Medium,High,4
+Leaky: + votes and rating (INVALID),High,Low,0
+Leaky: + votes and rating (INVALID),High,Medium,3
+Leaky: + votes and rating (INVALID),High,High,492

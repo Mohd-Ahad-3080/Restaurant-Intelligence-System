@@ -1,0 +1,82 @@
+table robustness_checks
+	lineageTag: ffbe0076-4921-43ef-ad00-e22422a09184
+
+	column variant
+		dataType: string
+		lineageTag: f8de80ad-27a7-4295-9cc8-5b7b34cb32eb
+		summarizeBy: none
+		sourceColumn: variant
+
+		annotation SummarizationSetBy = Automatic
+
+	column rows
+		dataType: int64
+		formatString: 0
+		lineageTag: 0c8392c8-9fe5-46b7-ae27-d4d58ed75056
+		summarizeBy: sum
+		sourceColumn: rows
+
+		annotation SummarizationSetBy = Automatic
+
+	column features
+		dataType: int64
+		formatString: 0
+		lineageTag: 2136f78d-1a44-4963-805d-d6f6b1de5d7a
+		summarizeBy: sum
+		sourceColumn: features
+
+		annotation SummarizationSetBy = Automatic
+
+	column test_accuracy
+		dataType: double
+		lineageTag: 11f3a4f0-907a-4d28-a812-69233aaf77cd
+		summarizeBy: sum
+		sourceColumn: test_accuracy
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column test_f1_macro
+		dataType: double
+		lineageTag: 45af5926-3587-4940-b009-4096059c97b7
+		summarizeBy: sum
+		sourceColumn: test_f1_macro
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column test_roc_auc_ovr_macro
+		dataType: double
+		lineageTag: a86b1368-1e6a-4e83-8531-cd0f35c2aa83
+		summarizeBy: sum
+		sourceColumn: test_roc_auc_ovr_macro
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column majority_baseline_accuracy
+		dataType: double
+		lineageTag: 6dcae0f3-de47-4bfa-aef3-3e9e91a1ae33
+		summarizeBy: sum
+		sourceColumn: majority_baseline_accuracy
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition robustness_checks = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("D:\restaurant-intelligence\dashboards\powerbi\powerbi_data.xlsx"), null, true),
+				    robustness_checks_Sheet = Source{[Item="robustness_checks",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(robustness_checks_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"variant", type text}, {"rows", Int64.Type}, {"features", Int64.Type}, {"test_accuracy", type number}, {"test_f1_macro", type number}, {"test_roc_auc_ovr_macro", type number}, {"majority_baseline_accuracy", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,33 @@
+table restaurant_cuisines
+	lineageTag: 799a502b-7383-4f4e-b78a-52c9ec3f9341
+
+	column restaurant_id
+		dataType: int64
+		formatString: 0
+		lineageTag: fb1b638b-260c-4edf-80fa-b3a5106f07ed
+		summarizeBy: none
+		sourceColumn: restaurant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column cuisine
+		dataType: string
+		lineageTag: e7081f1f-e3af-4f8f-91ab-71c2bca0e26a
+		summarizeBy: none
+		sourceColumn: cuisine
+
+		annotation SummarizationSetBy = Automatic
+
+	partition restaurant_cuisines = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("D:\restaurant-intelligence\dashboards\powerbi\powerbi_data.xlsx"), null, true),
+				    restaurant_cuisines_Sheet = Source{[Item="restaurant_cuisines",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(restaurant_cuisines_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"restaurant_id", Int64.Type}, {"cuisine", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

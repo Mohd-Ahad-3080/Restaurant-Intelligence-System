@@ -1,0 +1,2 @@
+model,rows,n_train,n_test,cv_f1_macro_train,test_accuracy,test_f1_macro,test_roc_auc,majority_baseline_accuracy
+"High vs Low (2 classes, Medium excluded) - separate question",4957,3965,992,0.8650581473888886,0.8316532258064516,0.8316147255801,0.9247769444952544,0.501008064516129

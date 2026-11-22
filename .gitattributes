@@ -1,0 +1,9 @@
+# Consistent line endings on Windows and macOS
+* text=auto eol=lf
+
+# Original Kaggle files must stay byte-for-byte identical (never converted)
+data/raw/** binary
+*.xlsx binary
+*.pbix binary
+*.twbx binary
+*.hyper binary

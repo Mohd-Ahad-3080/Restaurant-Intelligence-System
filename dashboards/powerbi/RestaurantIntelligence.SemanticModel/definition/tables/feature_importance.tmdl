@@ -1,0 +1,72 @@
+table feature_importance
+	lineageTag: 34d6fbd2-56df-43c7-b0c0-27fb2264fbc7
+
+	measure Importance = SUM ( feature_importance[importance_mean] )
+		formatString: 0.000
+		lineageTag: d4922dc2-5859-5f06-8774-115933acebde
+
+	measure 'Top 10 Importance' = IF ( RANKX ( ALLSELECTED ( feature_importance[feature_label] ), [Importance], , DESC, Skip ) <= 10, [Importance] )
+		formatString: 0.000
+		lineageTag: fbe4a39f-bd07-5ff5-abd1-ef6c99e2048f
+
+	measure 'Title p4_importance' = IF ( ISBLANK ( [Top 10 Importance] ), "No data for this selection", "Feature importance: top 10 (permutation importance, test set)" )
+		lineageTag: e202c8a9-17a8-5d36-b713-b3a8dfe863aa
+
+	column rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 6bfcb96f-2eee-45d1-a425-ee1f3e2b641f
+		summarizeBy: sum
+		sourceColumn: rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column feature
+		dataType: string
+		lineageTag: 974b70c2-06cf-4da6-b29c-1f17271e03c2
+		summarizeBy: none
+		sourceColumn: feature
+
+		annotation SummarizationSetBy = Automatic
+
+	column feature_label
+		dataType: string
+		lineageTag: 3d0e4724-dadd-4eb8-b185-b44624199676
+		summarizeBy: none
+		sourceColumn: feature_label
+
+		annotation SummarizationSetBy = Automatic
+
+	column importance_mean
+		dataType: double
+		lineageTag: f6d3faa4-faca-4949-b7e7-9ee21437bea1
+		summarizeBy: sum
+		sourceColumn: importance_mean
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column importance_std
+		dataType: double
+		lineageTag: 3236f4cd-8562-46b5-b43a-e4f28530076f
+		summarizeBy: sum
+		sourceColumn: importance_std
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition feature_importance = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("D:\restaurant-intelligence\dashboards\powerbi\powerbi_data.xlsx"), null, true),
+				    feature_importance_Sheet = Source{[Item="feature_importance",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(feature_importance_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"rank", Int64.Type}, {"feature", type text}, {"feature_label", type text}, {"importance_mean", type number}, {"importance_std", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

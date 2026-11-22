@@ -1,0 +1,156 @@
+table model_comparison
+	lineageTag: 526a3985-9c7c-4997-a98f-225b3188c45c
+
+	measure 'Best Model' = CALCULATE ( SELECTEDVALUE ( model_comparison[model] ), model_comparison[is_best] = 1 )
+		lineageTag: 877ee4f6-009e-5853-8494-f5dc38e25026
+
+	measure 'Best Accuracy' = CALCULATE ( MAX ( model_comparison[test_accuracy] ), model_comparison[is_best] = 1 )
+		formatString: 0.0%
+		lineageTag: 942edb59-018c-54c2-8a97-447089e24ee2
+
+	measure 'Best Macro F1' = CALCULATE ( MAX ( model_comparison[test_f1_macro] ), model_comparison[is_best] = 1 )
+		formatString: 0.000
+		lineageTag: ed33207b-ffa1-5f5a-a1ed-f14585aabdcf
+
+	measure 'Best ROC AUC' = CALCULATE ( MAX ( model_comparison[test_roc_auc_ovr_macro] ), model_comparison[is_best] = 1 )
+		formatString: 0.000
+		lineageTag: de53e3d8-6516-538c-84d9-7719c961df80
+
+	measure 'Baseline Accuracy' = CALCULATE ( MAX ( model_comparison[test_accuracy] ), model_comparison[model] = "Baseline (majority class)" )
+		formatString: 0.0%
+		lineageTag: 2712df9d-3d66-5223-b4c2-24648484b3bd
+
+	measure 'Title p4_kpi1' = IF ( ISBLANK ( [Best Model] ), "No data for this selection", "Best model" )
+		lineageTag: 8f346b4c-19d0-57e1-9924-6444474c1731
+
+	measure 'Title p4_kpi2' = IF ( ISBLANK ( [Best Accuracy] ), "No data for this selection", "Test accuracy" )
+		lineageTag: c6835989-7c4e-539b-bb14-a12ee98156ec
+
+	measure 'Title p4_kpi3' = IF ( ISBLANK ( [Best Macro F1] ), "No data for this selection", "Macro F1" )
+		lineageTag: b543529d-4a11-54e5-b487-982d4091686a
+
+	measure 'Title p4_kpi4' = IF ( ISBLANK ( [Best ROC AUC] ), "No data for this selection", "ROC-AUC (one-vs-rest)" )
+		lineageTag: 42af6398-3dd6-54d2-8b38-5dc05697bb22
+
+	measure 'Title p4_kpi5' = IF ( ISBLANK ( [Baseline Accuracy] ), "No data for this selection", "Baseline accuracy (majority class)" )
+		lineageTag: 6e46dc48-0e7b-510f-887d-2270e81c8665
+
+	measure 'Title p4_metrics' = IF ( ISBLANK ( COUNTROWS ( 'model_comparison' ) ), "No data for this selection", "Model comparison (test set; macro averages)" )
+		lineageTag: 9ebd8ee2-bfac-5e78-b730-7bf62b69f2a6
+
+	column model
+		dataType: string
+		lineageTag: 4dc74562-b47d-41d6-b210-60b5e40e16d1
+		summarizeBy: none
+		sourceColumn: model
+		sortByColumn: model_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ee74863-8b26-44ae-ac2c-75acdf6d4677
+		summarizeBy: sum
+		sourceColumn: model_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_best
+		dataType: int64
+		formatString: 0
+		lineageTag: 59efcc8a-7388-460e-8c5f-15aa3ad00555
+		summarizeBy: sum
+		sourceColumn: is_best
+
+		annotation SummarizationSetBy = Automatic
+
+	column test_accuracy
+		dataType: double
+		formatString: 0.000
+		lineageTag: 88795c10-7871-4139-8fac-a3056f9cc8c7
+		summarizeBy: none
+		sourceColumn: test_accuracy
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column test_precision_macro
+		dataType: double
+		formatString: 0.000
+		lineageTag: 1ee08bbd-66c7-4ebc-9fb6-609c8a56a9a9
+		summarizeBy: none
+		sourceColumn: test_precision_macro
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column test_recall_macro
+		dataType: double
+		formatString: 0.000
+		lineageTag: cb399d7e-a75e-464c-86f4-4c2de3588e2c
+		summarizeBy: none
+		sourceColumn: test_recall_macro
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column test_f1_macro
+		dataType: double
+		formatString: 0.000
+		lineageTag: 929ffb57-5c92-4fef-a8ee-8051bd2431f0
+		summarizeBy: none
+		sourceColumn: test_f1_macro
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column test_f1_weighted
+		dataType: double
+		lineageTag: ab45c7bf-9ddd-461d-aa3b-b0825076bdbf
+		summarizeBy: sum
+		sourceColumn: test_f1_weighted
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column test_roc_auc_ovr_macro
+		dataType: double
+		formatString: 0.000
+		lineageTag: c7da35de-2df9-4373-bd0d-82dace962b70
+		summarizeBy: none
+		sourceColumn: test_roc_auc_ovr_macro
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cv_f1_macro_mean
+		dataType: double
+		formatString: 0.000
+		lineageTag: 8ac5ee5d-64f8-455f-b7bf-130003491495
+		summarizeBy: none
+		sourceColumn: cv_f1_macro_mean
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition model_comparison = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("D:\restaurant-intelligence\dashboards\powerbi\powerbi_data.xlsx"), null, true),
+				    model_comparison_Sheet = Source{[Item="model_comparison",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(model_comparison_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"model", type text}, {"model_order", Int64.Type}, {"is_best", Int64.Type}, {"test_accuracy", type number}, {"test_precision_macro", type number}, {"test_recall_macro", type number}, {"test_f1_macro", type number}, {"test_f1_weighted", type number}, {"test_roc_auc_ovr_macro", type number}, {"cv_f1_macro_mean", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

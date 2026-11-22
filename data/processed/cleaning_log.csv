@@ -1,0 +1,27 @@
+step_no,step,column,rows_affected,rows_after,reason
+1,Load validated raw data,all,9551,9551,Starting row count
+2,Drop exact duplicate rows,all,0,9551,Identical rows add no information
+3,Drop rows with missing Restaurant ID,Restaurant ID,0,9551,ID is the primary key
+4,Drop duplicate Restaurant IDs (keep first),Restaurant ID,0,9551,ID must be unique
+5,Rename columns to snake_case,all,0,9551,Consistent names for SQL/Python
+6,Remove invisible control characters (U+0080-U+009F),"restaurant_name, city, address, locality, locality_verbose, cuisines, currency, rating_text, rating_color, country",164,9551,"Cells changed; e.g. 'Pounds(\x8c£)' -> 'Pounds(£)' (encoding debris, never visible)"
+7,Trim and collapse extra spaces in text,"restaurant_name, city, address, locality, locality_verbose, cuisines, currency, rating_text, rating_color, country",182,9551,Cells changed (not rows)
+8,Fix country spelling 'Phillipines' -> 'Philippines',country,22,9551,Spelling error in Country-Code.xlsx
+9,Relabel currency 'Botswana Pula(P)' -> 'Philippine Peso(P)' for Philippines,currency,22,9551,Source mislabel: currency label does not match the country
+10,Fix currency spelling 'Emirati Diram(AED)' -> 'Emirati Dirham (AED)',currency,60,9551,Source typo in the currency name ('Diram' -> 'Dirham')
+11,Fill missing cuisines with 'Unknown',cuisines,9,9551,Keeps restaurant; excluded from cuisine pairs table
+12,Remove a cuisine listed twice for the same restaurant,cuisines,5,9551,"e.g. 'Chinese, ..., Chinese' counted once"
+13,Convert Yes/No to 1/0,has_table_booking,0,9551,Rows affected = values that were not Yes/No (set to empty)
+14,Convert Yes/No to 1/0,has_online_delivery,0,9551,Rows affected = values that were not Yes/No (set to empty)
+15,Convert Yes/No to 1/0,is_delivering_now,0,9551,Rows affected = values that were not Yes/No (set to empty)
+16,Convert Yes/No to 1/0,switch_to_order_menu,0,9551,Rows affected = values that were not Yes/No (set to empty)
+17,Rating 0 / 'Not rated' -> missing,aggregate_rating,2148,9551,"A zero means no rating yet, not a real score"
+18,Ratings outside 0-5 -> missing,aggregate_rating,0,9551,Impossible values
+19,Negative votes -> missing,votes,0,9551,Impossible values
+20,Price range outside 1-4 -> missing,price_range,0,9551,Zomato bands are 1-4
+21,Cost for two <= 0 -> missing,avg_cost_for_two,18,9551,A meal cannot cost 0
+22,"Flag cost outliers (IQR, within country + currency)",is_cost_outlier,846,9551,Flag only; expensive restaurants are real
+23,"Add approximate cost in USD (World Bank 2017 official rates, by country)",avg_cost_for_two_usd,9533,9551,"Rows affected = rows with a cost; for cross-country comparison only, local cost is kept"
+24,Zero / out-of-range coordinates -> missing,"longitude, latitude",499,9551,"(0,0) is a placeholder, not a real location"
+25,Add popularity_class (Option B),popularity_class,7403,9551,Rows affected = rated restaurants that received a class
+26,Final cleaned row count,all,0,9551,Rows in zomato_clean.csv

@@ -1,0 +1,1274 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20263.26.1022.1645                               -->
+<workbook _.fcp.WorkbookFingerprinting.true...author-id='51cb229ac0a2000cb47af0daca26000b1e7645bafe4bf3a87ca27079f277302d' _.fcp.WorkbookFingerprinting.true...creator-author-id='51cb229ac0a2000cb47af0daca26000b1e7645bafe4bf3a87ca27079f277302d' _.fcp.WorkbookFingerprinting.true...creator-license-type='public' _.fcp.WorkbookFingerprinting.true...creator-machine-id='51cb229ac0a2000cb47af0daca26000b1e7645bafe4bf3a87ca27079f277302d' _.fcp.WorkbookFingerprinting.true...license-type='public' _.fcp.WorkbookFingerprinting.true...machine-id='51cb229ac0a2000cb47af0daca26000b1e7645bafe4bf3a87ca27079f277302d' original-version='18.1' source-build='2026.3.0 (20263.26.1022.1645)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <_.fcp.WorkbookFingerprinting.true...WorkbookFingerprinting />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='zomato_clean' inline='true' name='federated.1w4wyhf12e4e3h1fxit7112e80cq' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='zomato_clean' name='textscan.0chasmp07htmzp10lymz50uz0sg8'>
+            <connection class='textscan' directory='D:/restaurant-intelligence/data/processed' filename='zomato_clean.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0chasmp07htmzp10lymz50uz0sg8' name='zomato_clean.csv' table='[zomato_clean#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='restaurant_id' ordinal='0' />
+            <column datatype='string' name='restaurant_name' ordinal='1' />
+            <column datatype='integer' name='country_code' ordinal='2' />
+            <column datatype='string' name='country' ordinal='3' />
+            <column datatype='string' name='city' ordinal='4' />
+            <column datatype='string' name='address' ordinal='5' />
+            <column datatype='string' name='locality' ordinal='6' />
+            <column datatype='string' name='locality_verbose' ordinal='7' />
+            <column datatype='real' name='longitude' ordinal='8' />
+            <column datatype='real' name='latitude' ordinal='9' />
+            <column datatype='string' name='cuisines' ordinal='10' />
+            <column datatype='real' name='avg_cost_for_two' ordinal='11' />
+            <column datatype='string' name='currency' ordinal='12' />
+            <column datatype='integer' name='has_table_booking' ordinal='13' />
+            <column datatype='integer' name='has_online_delivery' ordinal='14' />
+            <column datatype='integer' name='is_delivering_now' ordinal='15' />
+            <column datatype='integer' name='switch_to_order_menu' ordinal='16' />
+            <column datatype='integer' name='price_range' ordinal='17' />
+            <column datatype='real' name='aggregate_rating' ordinal='18' />
+            <column datatype='string' name='rating_color' ordinal='19' />
+            <column datatype='string' name='rating_text' ordinal='20' />
+            <column datatype='integer' name='votes' ordinal='21' />
+            <column datatype='integer' name='n_cuisines' ordinal='22' />
+            <column datatype='integer' name='is_rated' ordinal='23' />
+            <column datatype='integer' name='is_cost_outlier' ordinal='24' />
+            <column datatype='integer' name='has_valid_coords' ordinal='25' />
+            <column datatype='real' name='votes_pct_in_country' ordinal='26' />
+            <column datatype='string' name='popularity_class' ordinal='27' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>restaurant_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[restaurant_id]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>restaurant_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>restaurant_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[restaurant_name]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>restaurant_name</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>country_code</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[country_code]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>country_code</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[country]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>country</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>city</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[city]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>city</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>address</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[address]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>address</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>locality</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[locality]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>locality</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>locality_verbose</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[locality_verbose]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>locality_verbose</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>longitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[longitude]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>longitude</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>latitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[latitude]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>latitude</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cuisines</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[cuisines]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>cuisines</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>avg_cost_for_two</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[avg_cost_for_two]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>avg_cost_for_two</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>currency</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[currency]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>currency</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>has_table_booking</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[has_table_booking]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>has_table_booking</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>has_online_delivery</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[has_online_delivery]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>has_online_delivery</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_delivering_now</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[is_delivering_now]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>is_delivering_now</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>switch_to_order_menu</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[switch_to_order_menu]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>switch_to_order_menu</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>price_range</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[price_range]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>price_range</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>aggregate_rating</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[aggregate_rating]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>aggregate_rating</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rating_color</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[rating_color]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>rating_color</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rating_text</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[rating_text]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>rating_text</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>votes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[votes]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>votes</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>n_cuisines</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[n_cuisines]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>n_cuisines</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_rated</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[is_rated]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>is_rated</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_cost_outlier</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[is_cost_outlier]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>is_cost_outlier</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>has_valid_coords</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[has_valid_coords]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>has_valid_coords</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>votes_pct_in_country</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[votes_pct_in_country]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>votes_pct_in_country</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>popularity_class</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[popularity_class]</local-name>
+            <parent-name>[zomato_clean.csv]</parent-name>
+            <remote-alias>popularity_class</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='zomato_clean.csv' datatype='table' name='[__tableau_internal_object_id__].[zomato_clean.csv_A22557F65E9048AB926642567C935B31]' role='measure' type='quantitative' />
+      <column caption='Address' datatype='string' name='[address]' role='dimension' type='nominal' />
+      <column caption='Aggregate Rating' datatype='real' name='[aggregate_rating]' role='measure' type='quantitative' />
+      <column caption='Avg Cost For Two' datatype='real' name='[avg_cost_for_two]' role='measure' type='quantitative' />
+      <column caption='City' datatype='string' name='[city]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Country Code' datatype='integer' name='[country_code]' role='dimension' type='ordinal' />
+      <column caption='Cuisines' datatype='string' name='[cuisines]' role='dimension' type='nominal' />
+      <column caption='Currency' datatype='string' name='[currency]' role='dimension' type='nominal' />
+      <column caption='Has Online Delivery' datatype='integer' name='[has_online_delivery]' role='measure' type='quantitative' />
+      <column caption='Has Table Booking' datatype='integer' name='[has_table_booking]' role='measure' type='quantitative' />
+      <column caption='Has Valid Coords' datatype='integer' name='[has_valid_coords]' role='measure' type='quantitative' />
+      <column caption='Is Cost Outlier' datatype='integer' name='[is_cost_outlier]' role='measure' type='quantitative' />
+      <column caption='Is Delivering Now' datatype='integer' name='[is_delivering_now]' role='measure' type='quantitative' />
+      <column caption='Is Rated' datatype='integer' name='[is_rated]' role='measure' type='quantitative' />
+      <column aggregation='Avg' caption='Latitude' datatype='real' name='[latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column caption='Locality' datatype='string' name='[locality]' role='dimension' type='nominal' />
+      <column caption='Locality Verbose' datatype='string' name='[locality_verbose]' role='dimension' type='nominal' />
+      <column aggregation='Avg' caption='Longitude' datatype='real' name='[longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column caption='N Cuisines' datatype='integer' name='[n_cuisines]' role='measure' type='quantitative' />
+      <column caption='Popularity Class' datatype='string' name='[popularity_class]' role='dimension' type='nominal' />
+      <column caption='Price Range' datatype='integer' name='[price_range]' role='measure' type='quantitative' />
+      <column caption='Rating Color' datatype='string' name='[rating_color]' role='dimension' type='nominal' />
+      <column caption='Rating Text' datatype='string' name='[rating_text]' role='dimension' type='nominal' />
+      <column caption='Restaurant Id' datatype='integer' name='[restaurant_id]' role='dimension' type='ordinal' />
+      <column caption='Restaurant Name' datatype='string' name='[restaurant_name]' role='dimension' type='nominal' />
+      <column caption='Switch To Order Menu' datatype='integer' name='[switch_to_order_menu]' role='measure' type='quantitative' />
+      <column caption='Votes' datatype='integer' name='[votes]' role='measure' type='quantitative' />
+      <column caption='Votes Pct In Country' datatype='real' name='[votes_pct_in_country]' role='measure' type='quantitative' />
+      <drill-paths>
+        <drill-path name='country, city'>
+          <field>[country]</field>
+          <field>[city]</field>
+        </drill-path>
+      </drill-paths>
+      <extract count='-1' enabled='true' object-id='' units='records' user-specific='false'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/NEW/AppData/Local/Temp/TableauTemp/#TableauTemp_0h0wn8q18zmm2s10a8ck30sajqdq.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='11/09/2026 01:24:10 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>restaurant_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[restaurant_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>restaurant_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>9551</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>restaurant_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[restaurant_name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>restaurant_name</remote-alias>
+              <ordinal>1</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3727</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>country_code</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[country_code]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>country_code</remote-alias>
+              <ordinal>2</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>15</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>country</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[country]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>country</remote-alias>
+              <ordinal>3</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>15</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>city</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[city]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>city</remote-alias>
+              <ordinal>4</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>156</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>address</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[address]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>address</remote-alias>
+              <ordinal>5</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5292</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>locality</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[locality]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>locality</remote-alias>
+              <ordinal>6</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>791</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>locality_verbose</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[locality_verbose]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>locality_verbose</remote-alias>
+              <ordinal>7</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>830</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>longitude</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[longitude]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>longitude</remote-alias>
+              <ordinal>8</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4446</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>latitude</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[latitude]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>latitude</remote-alias>
+              <ordinal>9</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5756</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cuisines</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[cuisines]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>cuisines</remote-alias>
+              <ordinal>10</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1050</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>avg_cost_for_two</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[avg_cost_for_two]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>avg_cost_for_two</remote-alias>
+              <ordinal>11</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>116</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>currency</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[currency]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>currency</remote-alias>
+              <ordinal>12</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>has_table_booking</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[has_table_booking]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>has_table_booking</remote-alias>
+              <ordinal>13</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>has_online_delivery</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[has_online_delivery]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>has_online_delivery</remote-alias>
+              <ordinal>14</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_delivering_now</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[is_delivering_now]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_delivering_now</remote-alias>
+              <ordinal>15</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>switch_to_order_menu</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[switch_to_order_menu]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>switch_to_order_menu</remote-alias>
+              <ordinal>16</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>price_range</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[price_range]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>price_range</remote-alias>
+              <ordinal>17</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>aggregate_rating</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[aggregate_rating]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>aggregate_rating</remote-alias>
+              <ordinal>18</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>33</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>rating_color</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[rating_color]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>rating_color</remote-alias>
+              <ordinal>19</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>rating_text</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[rating_text]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>rating_text</remote-alias>
+              <ordinal>20</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>votes</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[votes]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>votes</remote-alias>
+              <ordinal>21</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>705</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>n_cuisines</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[n_cuisines]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>n_cuisines</remote-alias>
+              <ordinal>22</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_rated</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[is_rated]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_rated</remote-alias>
+              <ordinal>23</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>is_cost_outlier</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[is_cost_outlier]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>is_cost_outlier</remote-alias>
+              <ordinal>24</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>has_valid_coords</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[has_valid_coords]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>has_valid_coords</remote-alias>
+              <ordinal>25</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>votes_pct_in_country</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[votes_pct_in_country]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>votes_pct_in_country</remote-alias>
+              <ordinal>26</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>882</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>popularity_class</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[popularity_class]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>popularity_class</remote-alias>
+              <ordinal>27</ordinal>
+              <family>zomato_clean.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[zomato_clean.csv_A22557F65E9048AB926642567C935B31]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='zomato_clean.csv' id='zomato_clean.csv_A22557F65E9048AB926642567C935B31'>
+            <properties context=''>
+              <relation connection='textscan.0chasmp07htmzp10lymz50uz0sg8' name='zomato_clean.csv' table='[zomato_clean#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='restaurant_id' ordinal='0' />
+                  <column datatype='string' name='restaurant_name' ordinal='1' />
+                  <column datatype='integer' name='country_code' ordinal='2' />
+                  <column datatype='string' name='country' ordinal='3' />
+                  <column datatype='string' name='city' ordinal='4' />
+                  <column datatype='string' name='address' ordinal='5' />
+                  <column datatype='string' name='locality' ordinal='6' />
+                  <column datatype='string' name='locality_verbose' ordinal='7' />
+                  <column datatype='real' name='longitude' ordinal='8' />
+                  <column datatype='real' name='latitude' ordinal='9' />
+                  <column datatype='string' name='cuisines' ordinal='10' />
+                  <column datatype='real' name='avg_cost_for_two' ordinal='11' />
+                  <column datatype='string' name='currency' ordinal='12' />
+                  <column datatype='integer' name='has_table_booking' ordinal='13' />
+                  <column datatype='integer' name='has_online_delivery' ordinal='14' />
+                  <column datatype='integer' name='is_delivering_now' ordinal='15' />
+                  <column datatype='integer' name='switch_to_order_menu' ordinal='16' />
+                  <column datatype='integer' name='price_range' ordinal='17' />
+                  <column datatype='real' name='aggregate_rating' ordinal='18' />
+                  <column datatype='string' name='rating_color' ordinal='19' />
+                  <column datatype='string' name='rating_text' ordinal='20' />
+                  <column datatype='integer' name='votes' ordinal='21' />
+                  <column datatype='integer' name='n_cuisines' ordinal='22' />
+                  <column datatype='integer' name='is_rated' ordinal='23' />
+                  <column datatype='integer' name='is_cost_outlier' ordinal='24' />
+                  <column datatype='integer' name='has_valid_coords' ordinal='25' />
+                  <column datatype='real' name='votes_pct_in_country' ordinal='26' />
+                  <column datatype='string' name='popularity_class' ordinal='27' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='zomato_clean' name='federated.1w4wyhf12e4e3h1fxit7112e80cq' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1w4wyhf12e4e3h1fxit7112e80cq'>
+            <column caption='City' datatype='string' name='[city]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+            <column-instance column='[city]' derivation='None' name='[none:city:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1w4wyhf12e4e3h1fxit7112e80cq].[Longitude (generated)]' field-type='quantitative' max='-2861779.1263601389' min='-18710753.101755902' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1w4wyhf12e4e3h1fxit7112e80cq].[Latitude (generated)]' field-type='quantitative' max='9947642.0005226694' min='1862066.63027035' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.1w4wyhf12e4e3h1fxit7112e80cq].[none:city:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1w4wyhf12e4e3h1fxit7112e80cq].[Latitude (generated)]</rows>
+        <cols>[federated.1w4wyhf12e4e3h1fxit7112e80cq].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{ED37F39E-DCE5-4EB8-9533-B9A02F6A5CBD}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{7B9E9AC0-466C-4404-8D53-495935C3FEA1}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>

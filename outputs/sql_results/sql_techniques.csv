@@ -1,0 +1,29 @@
+Query,JOIN,GROUP BY,HAVING,Subquery,CTE,Window function,Aggregate functions,View,Index used,Indexes (EXPLAIN)
+Q01,False,False,False,False,False,False,True,False,False,
+Q02,False,False,False,False,False,True,True,True,True,"idx_country_city, uq_country_name"
+Q03,False,False,False,False,False,False,False,True,True,"idx_country_city, uq_country_name"
+Q04,False,False,False,False,False,False,False,True,True,"idx_country_city, uq_country_name"
+Q05,False,True,False,False,False,True,True,False,False,
+Q06,False,False,False,False,False,True,True,True,True,idx_price_range
+Q07,False,False,False,False,False,False,False,True,True,"idx_country_city, uq_country_name"
+Q08,False,True,False,False,False,False,True,True,True,"idx_country_city, uq_country_name"
+Q09,False,True,False,False,False,False,True,True,True,"idx_country_city, uq_country_name"
+Q10,False,False,False,True,False,False,True,True,True,"PRIMARY, idx_price_range"
+Q11,False,False,False,False,False,False,False,True,True,PRIMARY
+Q12,False,False,False,False,False,False,False,True,True,PRIMARY
+Q13,False,True,False,False,False,False,True,False,False,
+Q14,False,False,False,False,False,False,False,True,True,idx_city_locality
+Q15,False,False,False,False,False,False,False,True,True,idx_city_locality
+Q16,False,True,False,False,False,False,True,True,True,"idx_country_city, uq_country_name"
+Q17,True,True,False,False,False,False,True,False,True,"idx_country_city, uq_country_name"
+Q18,False,True,True,False,False,False,True,False,True,idx_name
+Q19,True,True,False,False,True,False,True,True,True,"PRIMARY, idx_name"
+Q20,False,True,False,False,False,False,True,True,True,"idx_country_city, uq_country_name"
+Q21,False,True,False,False,False,False,True,False,True,idx_price_range
+Q22,False,True,False,False,False,False,True,False,False,
+Q23,False,False,False,False,False,False,False,True,True,PRIMARY
+Q24,False,False,False,False,False,False,False,True,True,"idx_country_city, uq_country_name"
+Q25,False,True,False,False,False,False,True,False,False,
+Q26,True,True,False,False,False,False,True,False,True,"idx_country_city, uq_country_name"
+Q27,True,True,False,True,True,True,True,False,True,"<auto_key0>, PRIMARY, idx_city_locality"
+Q28,False,True,False,True,True,True,True,True,True,"<auto_key0>, idx_city_locality"

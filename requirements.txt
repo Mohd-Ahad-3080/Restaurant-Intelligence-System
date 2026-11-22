@@ -1,0 +1,24 @@
+# Restaurant Intelligence System - pinned dependencies (Python 3.11+; tested on 3.13.5)
+pandas==3.1.1
+numpy==2.5.4
+matplotlib==3.11.2
+seaborn==0.13.2
+scikit-learn==1.9.1
+scipy==1.18.1
+SQLAlchemy==2.1.8
+mysql-connector-python==26.10.0
+joblib==1.6.0
+pytest==9.2.0
+openpyxl==3.1.5
+jupyter==1.1.1
+python-dotenv==1.2.4
+# Phase 4-5: PBIP schema validation, PDF -> PNG export, Tableau .twb schema validation (lxml)
+jsonschema==4.25.1
+referencing==0.37.0
+pymupdf==2.1; sys_platform == "win32"   # report helpers (PDF -> PNG, handover scan); no Intel-Mac wheel
+lxml==6.1.3
+# Phase 5-6: Tableau extracts (.hyper), Word documents for the report
+tableauhyperapi==0.0.26479   # newest release with macOS wheels (0.0.26963 ships Windows/Linux only)
+python-docx==1.2.0
+# Client revision (2026-11-19): what-if app (scripts/app.py), approved by Anser
+streamlit==1.66.1

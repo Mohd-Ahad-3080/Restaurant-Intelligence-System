@@ -1,0 +1,10 @@
+area,rule,evidence
+Cleaning,"Raw rating 0 with 'Not rated' is treated as missing (blank), not as a real 0; flag is_rated = 0.","2,148 of 9,551 restaurants (22.5%)"
+KPIs: counts,"Restaurant, city, delivery and booking counts include unrated restaurants.","Restaurants KPI = 9,551"
+KPIs: average rating,Average rating uses rated restaurants only.,3.44 (rated only); it would be a misleading 2.67 if the zeros were counted
+KPIs: total votes,Total votes includes the few votes unrated restaurants have.,"Unrated restaurants hold 1,869 votes in total (max 3 each)"
+MySQL,"aggregate_rating is stored as NULL, so AVG() skips unrated rows; is_rated column; a CHECK constraint keeps popularity_class NULL exactly when is_rated = 0; query Q24 shows the unrated share by city.","sql/01_schema.sql, sql/03_analysis_queries.sql"
+Power BI,Measures 'Rated Restaurants' and 'Unrated %'; Avg Rating is blank for unrated rows; the rating distribution shows 'Not rated' as a separate grey bar.,dashboards/powerbi/dax_measures.md
+Tableau,"Rating fields stay empty for unrated restaurants, so averages use rated restaurants only.",dashboards/tableau/TABLEAU_GUIDE.md
+Model training,Excluded: they have no popularity class (the target needs a rating and votes).,"Training and test use 7,403 rated restaurants"
+Model predictions,"The saved model uses no votes or rating, so it can still predict for unrated restaurants. These predictions cannot be checked (no actual class).","Predicted for 2,148: Low 1,925 (89.6%), Medium 174 (8.1%), High 49 (2.3%)"

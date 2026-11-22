@@ -1,0 +1,7 @@
+restaurant_id,country,votes,votes_pct_in_country,popularity_class
+900101,Testland,1,0.1667,Low
+900102,Testland,2,0.3333,Low
+900103,Testland,3,0.5,Medium
+900104,Testland,4,0.6667,Medium
+900105,Testland,5,0.8333,High
+900106,Testland,6,1.0,High

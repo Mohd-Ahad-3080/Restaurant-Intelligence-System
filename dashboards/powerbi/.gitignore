@@ -1,0 +1,4 @@
+# Power BI Project (PBIP): local, machine-specific files (same entries Power BI Desktop writes)
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+**/.pbi/cache.abf.*

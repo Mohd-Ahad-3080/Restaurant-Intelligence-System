@@ -1,0 +1,549 @@
+table restaurants
+	lineageTag: c46063e0-b43e-4d23-8093-ad69fbd9e800
+
+	measure Restaurants = COUNTROWS ( restaurants )
+		formatString: #,0
+		lineageTag: f1fc01a3-1d65-5523-809a-414d2f292279
+
+	measure Cities = DISTINCTCOUNT ( restaurants[city] )
+		formatString: #,0
+		lineageTag: 5e778567-6e28-5e8f-9721-77da5c693c28
+
+	measure 'Avg Rating' = AVERAGE ( restaurants[aggregate_rating] )
+		formatString: 0.00
+		lineageTag: 3d3ae679-e62c-516e-b1b8-fd983e94158a
+
+	measure 'Total Votes' = SUM ( restaurants[votes] )
+		formatString: #,0
+		lineageTag: 21945a0d-7b76-5d7e-a134-dd17c6704609
+
+	measure 'Online Delivery %' = DIVIDE ( CALCULATE ( [Restaurants], restaurants[has_online_delivery] = 1 ), [Restaurants] )
+		formatString: 0.0%
+		lineageTag: 7a52ee10-92bb-5f8a-aba8-9190345e0c54
+
+	measure 'Table Booking %' = DIVIDE ( CALCULATE ( [Restaurants], restaurants[has_table_booking] = 1 ), [Restaurants] )
+		formatString: 0.0%
+		lineageTag: 867f8ab4-ed1b-57af-b988-f4fabdb2a913
+
+	measure 'Rated Restaurants' = CALCULATE ( [Restaurants], restaurants[is_rated] = 1 )
+		formatString: #,0
+		lineageTag: 8c5a6eeb-425e-5c5a-9057-cc4fe28d82e5
+
+	measure 'Unrated %' = DIVIDE ( [Restaurants] - [Rated Restaurants], [Restaurants] )
+		formatString: 0.0%
+		lineageTag: 7bd63013-860e-5e9d-90ca-e3835a4afb68
+
+	measure 'Avg Votes' = AVERAGE ( restaurants[votes] )
+		formatString: #,0.0
+		lineageTag: 66d16a27-1241-5256-99ec-51de598cb752
+
+	measure 'Avg Cost for Two (local)' = AVERAGE ( restaurants[avg_cost_for_two] )
+		formatString: #,0
+		lineageTag: 9adc357c-aab2-5a74-9ea6-2a81b9c9ca20
+
+	measure 'Avg Cost for Two (US$ approx)' = AVERAGE ( restaurants[avg_cost_for_two_usd] )
+		formatString: #,0.00
+		lineageTag: 765649f8-fd58-5fa2-8d11-2d024b9e9746
+
+	measure 'High Popularity %' = DIVIDE ( CALCULATE ( [Rated Restaurants], restaurants[popularity_class] = "High" ), [Rated Restaurants] )
+		formatString: 0.0%
+		lineageTag: 18ac8c37-f5d9-5025-82db-98118220f722
+
+	measure 'Top 10 City Restaurants' = IF ( RANKX ( ALLSELECTED ( restaurants[city] ), [Restaurants], , DESC, Skip ) <= 10, [Restaurants] )
+		formatString: #,0
+		lineageTag: c46ae0c7-730f-55ec-a8c9-0ec85379afb9
+
+	measure 'Top 10 City Restaurants by Price' = IF ( RANKX ( ALLSELECTED ( restaurants[city] ), CALCULATE ( [Restaurants], ALLSELECTED ( restaurants[price_label] ) ), , DESC, Skip ) <= 10, [Restaurants] )
+		formatString: #,0
+		lineageTag: e17fa71a-4573-54ae-a440-dd78a2087158
+
+	measure 'T10 Locality High Popularity %' = IF ( NOT ISBLANK ( [Top 10 Locality Restaurants] ), [High Popularity %] )
+		formatString: 0.0%
+		lineageTag: 035a5865-2804-5252-96a2-2f46b0572fa2
+
+	measure 'T10 Locality Avg Cost (local)' = IF ( NOT ISBLANK ( [Top 10 Locality Restaurants] ), [Avg Cost for Two (local)] )
+		formatString: #,0
+		lineageTag: e96c5671-e8a5-549c-89e0-5b4cf4bf4a0a
+
+	measure 'Cuisine Restaurants' = DISTINCTCOUNT ( restaurant_cuisines[restaurant_id] )
+		formatString: #,0
+		lineageTag: 97115953-95a5-519c-8408-6765958e407b
+
+	measure 'Avg Price Range' = AVERAGE ( restaurants[price_range] )
+		formatString: 0.00
+		lineageTag: e296ef84-5abc-5879-9477-2279a3a5ec41
+
+	measure 'Top 10 Cuisine Restaurants' = IF ( RANKX ( ALLSELECTED ( restaurant_cuisines[cuisine] ), [Cuisine Restaurants], , DESC, Skip ) <= 10, [Cuisine Restaurants] )
+		formatString: #,0
+		lineageTag: 7a35bfdb-3b97-5684-9d85-e07c2f8bcbab
+
+	measure 'Top 10 Country Restaurants' = IF ( RANKX ( ALLSELECTED ( restaurants[country] ), [Restaurants], , DESC, Skip ) <= 10, [Restaurants] )
+		formatString: #,0
+		lineageTag: 489bd658-779c-5d76-87b4-e16d8c53e16d
+
+	measure 'Service %' = SWITCH ( SELECTEDVALUE ( services[service_order] ), 1, [Table Booking %], 2, [Online Delivery %] )
+		formatString: 0.0%
+		lineageTag: a2cf512e-2b90-546d-ac1f-5ac33a0c104e
+
+	measure 'Price Bar Color' = SELECTEDVALUE ( restaurants[price_color], "#5C5C66" )
+		lineageTag: 2c5fc8f9-6c1f-58c3-8dfe-90d4a17da462
+
+	measure 'Rating Bar Color' = SELECTEDVALUE ( restaurants[rating_bar_color], "#5C5C66" )
+		lineageTag: e910541f-8989-545b-b55b-cd0a4e1c1112
+
+	measure 'Rated Avg Votes' = CALCULATE ( AVERAGE ( restaurants[votes] ), restaurants[is_rated] = 1 )
+		formatString: #,0
+		lineageTag: c9d0db9f-0319-5fbd-837e-8a790d2808b2
+
+	measure Localities = COUNTROWS ( SUMMARIZE ( restaurants, restaurants[city], restaurants[locality] ) )
+		formatString: #,0
+		lineageTag: 06cf50d3-884f-5ddd-a8f0-06235ad80bb8
+
+	measure 'Top 10 Locality Restaurants' = IF ( RANKX ( ALLSELECTED ( restaurants[locality_city] ), [Restaurants], , DESC, Skip ) <= 10, [Restaurants] )
+		formatString: #,0
+		lineageTag: ebb406db-ef13-5165-8623-fe3180af33f7
+
+	measure 'Avg Rating (India)' = CALCULATE ( [Avg Rating], KEEPFILTERS ( restaurants[country] = "India" ) )
+		formatString: 0.00
+		lineageTag: 180b6fed-68b8-5008-af88-ea30a6fbc1fb
+
+	measure 'Log10 Votes' = AVERAGE ( restaurants[log10_votes] )
+		formatString: 0.00
+		lineageTag: a309b9f4-6a55-5de6-b63b-3faf3c7dfb77
+
+	measure 'T10 Locality Avg Rating' = IF ( NOT ISBLANK ( [Top 10 Locality Restaurants] ), [Avg Rating] )
+		formatString: 0.00
+		lineageTag: f4c9a045-1e7b-5097-9083-6459f3daadac
+
+	measure 'T10 Locality Avg Votes' = IF ( NOT ISBLANK ( [Top 10 Locality Restaurants] ), [Avg Votes] )
+		formatString: #,0.0
+		lineageTag: 889b8fb9-546a-5b55-b178-89a9e278896a
+
+	measure 'T10 Locality Avg Price Range' = IF ( NOT ISBLANK ( [Top 10 Locality Restaurants] ), [Avg Price Range] )
+		formatString: 0.00
+		lineageTag: 69ced792-b81a-571e-b9c9-53ce322715c6
+
+	measure 'Title p1_kpi1' = IF ( ISBLANK ( [Restaurants] ), "No data for this selection", "Restaurants" )
+		lineageTag: 1fc92f8e-798f-5f87-aafb-d9c76a4328f5
+
+	measure 'Title p1_kpi2' = IF ( ISBLANK ( [Cities] ), "No data for this selection", "Cities" )
+		lineageTag: c4a24d6f-87f2-52bb-a32d-574398c8e569
+
+	measure 'Title p1_kpi3' = IF ( ISBLANK ( [Avg Rating] ), "No data for this selection", "Avg rating" )
+		lineageTag: c32704e7-1d47-5410-8eac-750a2bc54255
+
+	measure 'Title p1_kpi4' = IF ( ISBLANK ( [Total Votes] ), "No data for this selection", "Total votes" )
+		lineageTag: 132cf4bb-a7fe-5640-8b65-dcd49cb70a4b
+
+	measure 'Title p1_kpi5' = IF ( ISBLANK ( [Online Delivery %] ), "No data for this selection", "Online delivery" )
+		lineageTag: aeada341-7d4a-5305-8eb8-6fbb2772c780
+
+	measure 'Title p1_top_cuisines' = IF ( ISBLANK ( [Top 10 Cuisine Restaurants] ), "No data for this selection", "Top 10 cuisines (restaurants offering each)" )
+		lineageTag: 90b2f55f-5a1b-516b-9fce-7c3041bf5f49
+
+	measure 'Title p1_by_country' = IF ( ISBLANK ( [Top 10 Country Restaurants] ), "No data for this selection", "Restaurants by country (top 10)" )
+		lineageTag: 4886d93d-4a57-5e37-bdf9-1d7dfaf5506e
+
+	measure 'Title p1_rating_dist' = IF ( ISBLANK ( [Restaurants] ), "No data for this selection", "Rating distribution (Not rated in grey)" )
+		lineageTag: a10a97c3-b4d1-5f3e-9f06-0e5f6ae13f1e
+
+	measure 'Title p1_price_mix' = IF ( ISBLANK ( [Restaurants] ), "No data for this selection", "Price range mix (1 = Budget, 4 = Luxury)" )
+		lineageTag: d7afb411-00d6-5059-b95f-7bda037e8134
+
+	measure 'Title p1_services' = IF ( ISBLANK ( [Service %] ), "No data for this selection", "Table booking and online delivery" )
+		lineageTag: a6afee9a-5642-51be-81c1-2e857cb4b4e7
+
+	measure 'Title p2_kpi1' = IF ( ISBLANK ( [Rated Restaurants] ), "No data for this selection", "Rated restaurants" )
+		lineageTag: 9ad37894-b6dc-5097-9b91-156c8e877846
+
+	measure 'Title p2_kpi2' = IF ( ISBLANK ( [Unrated %] ), "No data for this selection", "Not rated" )
+		lineageTag: 5aace0a7-97ec-5e60-8516-c006c55bf695
+
+	measure 'Title p2_kpi3' = IF ( ISBLANK ( [Avg Votes] ), "No data for this selection", "Avg votes per restaurant" )
+		lineageTag: 632871a2-cea7-57c6-b4bd-b377389cad0a
+
+	measure 'Title p2_kpi4' = IF ( ISBLANK ( [Table Booking %] ), "No data for this selection", "Table booking" )
+		lineageTag: 0de1c90a-f941-59dc-80b1-c1bec2c63f17
+
+	measure 'Title p2_kpi5' = IF ( ISBLANK ( [Avg Price Range] ), "No data for this selection", "Avg price range (1-4)" )
+		lineageTag: 0cb02d47-e902-521b-abdd-bbde7aa2923d
+
+	measure 'Title p2_votes_rating' = IF ( ISBLANK ( [Avg Rating] ), "No data for this selection", "Votes vs rating (one dot per rated restaurant; votes on log10 scale: 2 = 100, 3 = 1,000)" )
+		lineageTag: c8c0b052-b911-5bfe-862d-dcf7a82d68f9
+
+	measure 'Title p2_rating_by_price' = IF ( ISBLANK ( [Avg Rating] ), "No data for this selection", "Average rating by price range" )
+		lineageTag: 0a1aeda1-fc9d-52ef-b9b8-fe740202c260
+
+	measure 'Title p2_delivery_rating' = IF ( ISBLANK ( [Avg Rating (India)] ), "No data for this selection", "India only: average rating with (Yes) vs without (No) online delivery" )
+		lineageTag: 1be6cbc5-8a8f-524c-9f7a-be29cde57b23
+
+	measure 'Title p2_booking_price' = IF ( ISBLANK ( [Avg Price Range] ), "No data for this selection", "Table booking vs cost level (avg price range 1-4; costs differ by currency)" )
+		lineageTag: b8ce3784-231d-5ccc-bc63-e23c5b8e0216
+
+	measure 'Title p3_kpi1' = IF ( ISBLANK ( [Restaurants] ), "No data for this selection", "Restaurants" )
+		lineageTag: dc19d6d0-f60b-5d33-9026-434acf02e03b
+
+	measure 'Title p3_kpi2' = IF ( ISBLANK ( [Cities] ), "No data for this selection", "Cities" )
+		lineageTag: 79e289a6-6243-5088-866d-6bd3d8d44500
+
+	measure 'Title p3_kpi3' = IF ( ISBLANK ( [Localities] ), "No data for this selection", "Localities" )
+		lineageTag: 16048d79-fef3-5959-b729-bdd13f66f033
+
+	measure 'Title p3_kpi4' = IF ( ISBLANK ( [Avg Rating] ), "No data for this selection", "Avg rating" )
+		lineageTag: 010eec72-2434-5d8d-8e52-38d4b4b4cd29
+
+	measure 'Title p3_kpi5' = IF ( ISBLANK ( [Avg Price Range] ), "No data for this selection", "Avg price range (1-4)" )
+		lineageTag: 02d15450-ad28-546f-887c-8212b550bc2f
+
+	measure 'Title p3_competition' = IF ( ISBLANK ( [Top 10 Locality Restaurants] ), "No data for this selection", "Area competition: 10 most crowded localities" )
+		lineageTag: d48bfcab-8336-5864-a08f-f7dfb6da4d93
+
+	measure 'Title p3_localities' = IF ( ISBLANK ( [Top 10 Locality Restaurants] ), "No data for this selection", "Top 10 localities by number of restaurants" )
+		lineageTag: bdf713ff-b0fa-5607-b817-3e81fe0e01d9
+
+	measure 'Title p3_price_rating' = IF ( ISBLANK ( [Avg Price Range] ), "No data for this selection", "Price level vs rating by city (bubble size = restaurants)" )
+		lineageTag: db8f3f31-d797-598f-86e3-7c584e77f9a9
+
+	measure 'Title p3_zones' = IF ( ISBLANK ( [Avg Rating] ), "No data for this selection", "Location comparison: average rating by zone" )
+		lineageTag: 083d081e-f82a-5650-8758-d8b357152c13
+
+	measure 'Title p5_kpi1' = IF ( ISBLANK ( [Restaurants] ), "No data for this selection", "Restaurants" )
+		lineageTag: 5d565933-a7b1-535c-be66-7ded7e2921b1
+
+	measure 'Title p5_kpi2' = IF ( ISBLANK ( [Localities] ), "No data for this selection", "Localities" )
+		lineageTag: d5a586c9-28a4-5c7f-bb86-2b967062b0b6
+
+	measure 'Title p5_kpi3' = IF ( ISBLANK ( [Avg Rating] ), "No data for this selection", "Avg rating (rated)" )
+		lineageTag: 80024f03-e49b-5334-9b0b-094a50292f1b
+
+	measure 'Title p5_kpi4' = IF ( ISBLANK ( [High Popularity %] ), "No data for this selection", "High popularity (rated)" )
+		lineageTag: a2b0062c-a16f-572e-83f4-aa40603fa8d5
+
+	measure 'Title p5_kpi5' = IF ( ISBLANK ( [Avg Cost for Two (local)] ), "No data for this selection", "Average cost for two (INR)" )
+		lineageTag: d16ce6d7-1aeb-5e95-b193-42d6a5629eaa
+
+	measure 'Title p5_cities' = IF ( ISBLANK ( [Restaurants] ), "No data for this selection", "Indian cities: rating, popularity, services and cost (INR and approx. US$)" )
+		lineageTag: 852f6df3-65a6-58d4-b09a-e7dfc3fb41e9
+
+	measure 'Title p5_price_mix' = IF ( ISBLANK ( [Top 10 City Restaurants by Price] ), "No data for this selection", "Price range mix: 10 largest cities" )
+		lineageTag: bee3a0df-9051-5e73-b75a-6afe6622c73b
+
+	measure 'Title p5_localities' = IF ( ISBLANK ( [Top 10 Locality Restaurants] ), "No data for this selection", "Top 10 localities: rating, popularity and cost" )
+		lineageTag: 006b2bc0-418d-5982-a8f2-a5cddedca068
+
+	measure 'Title p5_cuisines' = IF ( ISBLANK ( [Top 10 Cuisine Restaurants] ), "No data for this selection", "Cuisine mix: top 10 cuisines in the selection" )
+		lineageTag: cd293921-0d3c-5148-8064-e173e6e6c4dc
+
+	measure 'Title p5_top_cities' = IF ( ISBLANK ( [Top 10 City Restaurants] ), "No data for this selection", "Restaurants by city (top 10)" )
+		lineageTag: 74e97ca2-c2f6-5e5a-b7e1-2555c8b1802c
+
+	column locality_city = restaurants[locality] & " (" & restaurants[city] & ")"
+		dataType: string
+		lineageTag: 185dde8e-d0e9-50f0-9930-66c59b65fbba
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column log10_votes = IF ( restaurants[is_rated] = 1 && restaurants[votes] > 0, LOG10 ( restaurants[votes] ) )
+		dataType: double
+		lineageTag: 6ffe7085-7b97-56f9-b065-ff9af541997b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column restaurant_id
+		dataType: int64
+		formatString: 0
+		lineageTag: bab6a318-80d9-43dd-9365-d084f29b4268
+		summarizeBy: none
+		sourceColumn: restaurant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column restaurant_name
+		dataType: string
+		lineageTag: 78fe1cd4-0e79-4ee5-9acb-1d3e361c3138
+		summarizeBy: none
+		sourceColumn: restaurant_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 0789e10c-4a7f-4667-87f4-28d64dfd1295
+		dataCategory: Country
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: da276aa5-ae8b-4f9a-81c7-aa0870f3384d
+		dataCategory: City
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column locality
+		dataType: string
+		lineageTag: 319e0d4f-4434-478e-8192-d9df9ad13277
+		summarizeBy: none
+		sourceColumn: locality
+
+		annotation SummarizationSetBy = Automatic
+
+	column zone
+		dataType: string
+		lineageTag: 4ee50fe7-03c5-4ab4-8681-8ca8849a782c
+		summarizeBy: none
+		sourceColumn: zone
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: double
+		lineageTag: 6f18b4a1-42e0-4a2d-8d23-1610979cf63c
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		lineageTag: d3924c11-eb38-4ac7-a69d-59ddc6bd0aeb
+		dataCategory: Longitude
+		summarizeBy: none
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column has_valid_coords
+		dataType: int64
+		formatString: 0
+		lineageTag: 6591ea8a-4572-4337-a91b-85798f76b764
+		summarizeBy: sum
+		sourceColumn: has_valid_coords
+
+		annotation SummarizationSetBy = Automatic
+
+	column cuisines
+		dataType: string
+		lineageTag: 7d5a1a66-b244-4b94-95b8-3f33439bc855
+		summarizeBy: none
+		sourceColumn: cuisines
+
+		annotation SummarizationSetBy = Automatic
+
+	column n_cuisines
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ebea30d-265c-4811-b9f1-3579de11a9dc
+		summarizeBy: sum
+		sourceColumn: n_cuisines
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_cost_for_two
+		dataType: int64
+		formatString: 0
+		lineageTag: 27c4f534-f91b-4a6d-bfed-c511b5b500c9
+		summarizeBy: sum
+		sourceColumn: avg_cost_for_two
+
+		annotation SummarizationSetBy = Automatic
+
+	column currency
+		dataType: string
+		lineageTag: 578dfbab-cf3b-48db-9f0c-fe1b283dc62a
+		summarizeBy: none
+		sourceColumn: currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_range
+		dataType: int64
+		formatString: 0
+		lineageTag: ab86c735-68d8-4861-9bf1-a9bc78f43eea
+		summarizeBy: sum
+		sourceColumn: price_range
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_label
+		dataType: string
+		lineageTag: a17a1438-aee2-4ec3-8910-b0256a17069d
+		summarizeBy: none
+		sourceColumn: price_label
+		sortByColumn: price_range
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_color
+		dataType: string
+		lineageTag: 288dce4e-b152-4354-a5d3-71b11b2e55aa
+		summarizeBy: none
+		sourceColumn: price_color
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_table_booking
+		dataType: int64
+		formatString: 0
+		lineageTag: f4919e4e-ca16-46b0-b511-f8a392993457
+		summarizeBy: sum
+		sourceColumn: has_table_booking
+
+		annotation SummarizationSetBy = Automatic
+
+	column table_booking_label
+		dataType: string
+		lineageTag: f2dac533-26ea-4a51-9d62-1699d1c5e4cc
+		summarizeBy: none
+		sourceColumn: table_booking_label
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_online_delivery
+		dataType: int64
+		formatString: 0
+		lineageTag: f51e6b38-87cb-4adf-adaf-1ea1fe7af61b
+		summarizeBy: sum
+		sourceColumn: has_online_delivery
+
+		annotation SummarizationSetBy = Automatic
+
+	column online_delivery_label
+		dataType: string
+		lineageTag: 788b3994-6b17-43f1-8ede-30872463c566
+		summarizeBy: none
+		sourceColumn: online_delivery_label
+
+		annotation SummarizationSetBy = Automatic
+
+	column aggregate_rating
+		dataType: double
+		lineageTag: fc2c903f-fd16-4d06-956e-fef563713da9
+		summarizeBy: sum
+		sourceColumn: aggregate_rating
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rating_text
+		dataType: string
+		lineageTag: ddf78027-b895-4d79-86e6-c2778ffff4f4
+		summarizeBy: none
+		sourceColumn: rating_text
+		sortByColumn: rating_band_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column rating_band_order
+		dataType: int64
+		formatString: 0
+		lineageTag: aa6200e9-dee3-4f6b-a43c-b77efa1faee8
+		summarizeBy: sum
+		sourceColumn: rating_band_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column rating_bar_color
+		dataType: string
+		lineageTag: 90546b59-c2eb-405f-a3ab-a4a1e2d0963a
+		summarizeBy: none
+		sourceColumn: rating_bar_color
+
+		annotation SummarizationSetBy = Automatic
+
+	column votes
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c6d80f0-95d7-4366-8077-7d25ae3c893e
+		summarizeBy: sum
+		sourceColumn: votes
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_rated
+		dataType: int64
+		formatString: 0
+		lineageTag: e38af417-634f-4656-81b5-062039d95d01
+		summarizeBy: sum
+		sourceColumn: is_rated
+
+		annotation SummarizationSetBy = Automatic
+
+	column popularity_class
+		dataType: string
+		lineageTag: 50213b99-8282-4345-a37e-02692688cd5b
+		summarizeBy: none
+		sourceColumn: popularity_class
+		sortByColumn: popularity_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column popularity_order
+		dataType: int64
+		formatString: 0
+		lineageTag: ec4f6f8e-926b-4dba-9d03-921e1eaa0148
+		summarizeBy: sum
+		sourceColumn: popularity_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column branch_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 2fc8b770-7ab2-46ca-9777-eb324d9c1b44
+		summarizeBy: sum
+		sourceColumn: branch_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column outlet_type
+		dataType: string
+		lineageTag: 88c702e0-a6a8-40e6-8ace-d3b512e0b133
+		summarizeBy: none
+		sourceColumn: outlet_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column locality_size
+		dataType: int64
+		formatString: 0
+		lineageTag: d47fac65-d161-4649-9e1a-97e3809eabf9
+		summarizeBy: sum
+		sourceColumn: locality_size
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_cost_for_two_usd
+		dataType: double
+		formatString: 0.00
+		lineageTag: c7d11cb4-5968-5dd5-bce2-63f6197d462f
+		summarizeBy: sum
+		sourceColumn: avg_cost_for_two_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	partition restaurants = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("D:\restaurant-intelligence\dashboards\powerbi\powerbi_data.xlsx"), null, true),
+				    restaurants_Sheet = Source{[Item="restaurants",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(restaurants_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"restaurant_id", Int64.Type}, {"restaurant_name", type text}, {"country", type text}, {"city", type text}, {"locality", type text}, {"zone", type text}, {"latitude", type number}, {"longitude", type number}, {"has_valid_coords", Int64.Type}, {"cuisines", type text}, {"n_cuisines", Int64.Type}, {"avg_cost_for_two", Int64.Type}, {"currency", type text}, {"price_range", Int64.Type}, {"price_label", type text}, {"price_color", type text}, {"has_table_booking", Int64.Type}, {"table_booking_label", type text}, {"has_online_delivery", Int64.Type}, {"online_delivery_label", type text}, {"aggregate_rating", type number}, {"rating_text", type text}, {"rating_band_order", Int64.Type}, {"rating_bar_color", type text}, {"votes", Int64.Type}, {"is_rated", Int64.Type}, {"popularity_class", type text}, {"popularity_order", Int64.Type}, {"branch_count", Int64.Type}, {"outlet_type", type text}, {"locality_size", Int64.Type}, {"avg_cost_for_two_usd", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,7 @@
+id,title,based_on,text
+R1,Choose the location first,"F1, F7","Location and locality carry the most signal for popularity; compare candidate localities before deciding cuisine or price. Caveat: outside Delhi NCR the data lists mostly well-known restaurants, so part of the location effect reflects how Zomato sampled cities."
+R2,Offer table booking where the format allows it,F3,"It goes with a much higher share of High-popularity restaurants (association, not proof of cause)."
+R3,"Use delivery for reach, not for rating",F4,"In India, delivery goes with a higher High-popularity share (44.6% vs 27.2%) but ratings barely differ (3.37 vs 3.34); service quality still drives the rating."
+R4,Mind the price band,F2,"Mid and upper price ranges are more often High-popularity; budget outlets compete in a crowded, lower-voted segment."
+R5,Help unrated restaurants get their first ratings,F6,A fifth of listings have no rating; platform prompts or owner follow-up would make them comparable.
+R6,"Use the model as a screen, not a verdict","F7, F8",It separates likely High from likely Low well; Medium predictions near a cut-off are uncertain.

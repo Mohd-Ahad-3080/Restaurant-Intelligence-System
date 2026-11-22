@@ -1,0 +1,9 @@
+id,theme,finding,key_number,source
+F1,Market concentration,"90.6% of the 9,551 restaurants are in India and 83.2% are in Delhi NCR alone.",83.2%,data/processed/zomato_clean.csv
+F2,Price range and popularity,The share of High-popularity restaurants rises from 13.3% in price range 1 to 63.2% in range 3 (55.0% in range 4); average rating rises from 3.24 to 3.89.,13.3% -> 63.2%,rated restaurants; EDA chi-square and Kruskal-Wallis tests
+F3,Table booking (India),"In India (rated restaurants), 63.0% of restaurants with table booking are High-popularity, against 27.6% without; mean rating 3.55 vs 3.31.",63.0% vs 27.6%,rated Indian restaurants; EDA Mann-Whitney and chi-square tests
+F4,Online delivery (India),"In India (rated restaurants), delivery outlets are more often High-popularity (44.6% vs 27.2%), but their mean rating is almost the same (3.37 vs 3.34): delivery goes with more votes, not better ratings. Delivery exists only in India and the UAE.",44.6% vs 27.2%,rated Indian restaurants; EDA Mann-Whitney test
+F5,Votes and rating,"Votes and rating are strongly linked (Spearman rho = 0.68). The target is built from votes, so votes, rating and anything derived from them are excluded from the model's features.",rho 0.68,outputs/eda_statistics.csv
+F6,Unrated restaurants,"2,148 restaurants (22.5%) have no rating yet; only 4.5% of them offer online delivery, against 31.8% of rated ones.","2,148 (22.5%)",docs/unrated_restaurants.md
+F7,Popularity model,The honest model (Gradient Boosting) reaches 61.3% accuracy against a 33.6% baseline. Location is its strongest signal: without location features accuracy falls to 51.9%.,61.3%,docs/model_results.md
+F8,Medium class,"Accuracy is 44.8% for restaurants within 5 percentile points of a class cut-off and 79.3% for those far from it. Telling High from Low alone (a separate, easier question) reaches 83.2%.",44.8% vs 79.3%,docs/model_results.md

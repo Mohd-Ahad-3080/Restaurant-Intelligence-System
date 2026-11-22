@@ -1,0 +1,16 @@
+cuisine,rated_restaurants,avg_rating,avg_price_range
+Indian,66,4.16,2.76
+Sandwich,53,4.07,1.79
+Mediterranean,110,4.02,3.09
+Steak,62,3.99,3.16
+Sushi,75,3.97,2.96
+European,146,3.96,3.36
+Seafood,171,3.93,3.06
+Asian,228,3.9,2.86
+Mexican,174,3.87,2.43
+Japanese,134,3.83,3.07
+American,380,3.76,2.55
+Italian,726,3.75,2.68
+Thai,229,3.74,2.73
+Continental,699,3.71,2.78
+Burger,239,3.7,2.02

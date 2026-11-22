@@ -1,0 +1,13 @@
+test,question,groups,statistic,p_value,effect_size,effect_measure,significant_at_0_05
+Spearman correlation,Is rating associated with number of votes? (rated restaurants),"n=7,403",0.682,0.0,0.682,rho,True
+Kruskal-Wallis H,Does rating differ across price ranges?,"4 groups, n=7,403",1326.1,3.24978078553491e-287,0.179,epsilon-squared,True
+Spearman correlation,Is price range associated with rating?,"n=7,403",0.402,3.0205602863059293e-285,0.402,rho,True
+Mann-Whitney U,India: does rating differ with online delivery?,"Delivery (n=2,327, median=3.40) vs No delivery (n=4,186, median=3.30)",5232985.0,5.883228550827894e-07,0.074,rank-biserial r,True
+Mann-Whitney U,India: does rating differ with table booking?,"Booking (n=1,064, median=3.60) vs No booking (n=5,449, median=3.30)",3730574.5,6.7733950038706915e-50,0.287,rank-biserial r,True
+Spearman correlation,India: is cost for two (INR) associated with rating?,"n=6,504",0.332,1.6933842600822167e-167,0.332,rho,True
+Spearman correlation,Is the number of cuisines offered associated with rating?,"n=7,394",0.118,3.508982561662996e-24,0.118,rho,True
+Chi-square independence,Is popularity class independent of price range?,"4x3 table, n=7,403, dof=6",1427.6,2.5078193962656896e-305,0.311,Cramer's V,True
+Chi-square independence,Is popularity class independent of online delivery?,"2x3 table, n=7,403, dof=2",373.2,9.233346972512615e-82,0.225,Cramer's V,True
+Chi-square independence,Is popularity class independent of table booking?,"2x3 table, n=7,403, dof=2",513.0,3.9855430219440185e-112,0.263,Cramer's V,True
+Mann-Whitney U,Do chain branches (2+ outlets) differ in rating from single outlets?,"Chain (n=2,376, median=3.30) vs Single (n=5,027, median=3.40)",5108139.0,6.881360156327556e-24,-0.145,rank-biserial r,True
+Spearman correlation,India: are localities with more rated restaurants (competition) rated differently? (localities with 10+ rated),n=161,0.121,0.12599415868405942,0.121,rho,False

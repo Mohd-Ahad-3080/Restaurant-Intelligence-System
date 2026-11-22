@@ -1,0 +1,11 @@
+relationship AutoDetected_83252c6c-7f5f-43ca-bd81-6729fa123291
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: predictions.restaurant_id
+	toColumn: restaurants.restaurant_id
+
+relationship AutoDetected_de889669-b562-4a43-aee5-41090018853d
+	crossFilteringBehavior: bothDirections
+	fromColumn: restaurant_cuisines.restaurant_id
+	toColumn: restaurants.restaurant_id
+

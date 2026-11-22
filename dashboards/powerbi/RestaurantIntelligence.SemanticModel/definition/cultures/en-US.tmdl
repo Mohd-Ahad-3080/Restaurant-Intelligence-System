@@ -1,0 +1,1088 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "restaurants.top_10_country_restaurants": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "Top 10 Country Restaurants"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Restaurants": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.country": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "country"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Country": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.restaurants": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "Restaurants"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Restaurants": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.cities": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "Cities"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cities": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.avg_rating": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "Avg Rating"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Avg rating": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Rating": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.total_votes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "Total Votes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Total votes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.online_delivery_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "Online Delivery %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Online delivery": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.price_label": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "price_label"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Price range": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.rating_text": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "rating_text"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Rating": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.service_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "Service %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Share of restaurants": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.top_10_cuisine_restaurants": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "Top 10 Cuisine Restaurants"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Restaurants": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.city": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "city"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "City": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "services.service": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "services",
+			          "ConceptualProperty": "service"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Service": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurant_cuisines.cuisine": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurant_cuisines",
+			          "ConceptualProperty": "cuisine"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cuisine": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.avg_price_range": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "Avg Price Range"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Avg price range": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Avg price range (1-4)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.table_booking_label": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "table_booking_label"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Table booking": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.online_delivery_label": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "online_delivery_label"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Online delivery": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.rated_restaurants": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "Rated Restaurants"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Rated restaurants": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.unrated_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "Unrated %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Not rated": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.avg_votes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "Avg Votes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Avg votes per restaurant": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.table_booking_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "Table Booking %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Table booking": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.rated_avg_votes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "Rated Avg Votes"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "restaurants.top_10_locality_restaurants": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "Top 10 Locality Restaurants"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Restaurants": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.locality_city": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "locality_city"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Locality": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Locality (city)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.localities": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "Localities"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Localities": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.locality": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "locality"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "restaurants.zone": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "zone"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Zone": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "confusion_matrix.actual": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "confusion_matrix",
+			          "ConceptualProperty": "actual"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Actual": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "confusion_matrix.predicted": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "confusion_matrix",
+			          "ConceptualProperty": "predicted"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Predicted": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "confusion_matrix.confusion_count": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "confusion_matrix",
+			          "ConceptualProperty": "Confusion Count"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Restaurants": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "feature_importance.top_10_importance": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "feature_importance",
+			          "ConceptualProperty": "Top 10 Importance"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Importance": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "feature_importance.feature_label": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "feature_importance",
+			          "ConceptualProperty": "feature_label"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Feature": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_comparison.best_model": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_comparison",
+			          "ConceptualProperty": "Best Model"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Best model": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_comparison.best_accuracy": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_comparison",
+			          "ConceptualProperty": "Best Accuracy"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Test accuracy": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_comparison.best_macro_f1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_comparison",
+			          "ConceptualProperty": "Best Macro F1"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Macro F1": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_comparison.best_roc_auc": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_comparison",
+			          "ConceptualProperty": "Best ROC AUC"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ROC-AUC (one-vs-rest)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_comparison.baseline_accuracy": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_comparison",
+			          "ConceptualProperty": "Baseline Accuracy"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Baseline accuracy (majority class)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_comparison.model": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_comparison",
+			          "ConceptualProperty": "model"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Model": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_comparison.test_accuracy": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_comparison",
+			          "ConceptualProperty": "test_accuracy"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Accuracy": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_comparison.test_precision_macro": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_comparison",
+			          "ConceptualProperty": "test_precision_macro"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Precision": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_comparison.test_recall_macro": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_comparison",
+			          "ConceptualProperty": "test_recall_macro"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Recall": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_comparison.test_f1_macro": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_comparison",
+			          "ConceptualProperty": "test_f1_macro"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Macro F1": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_comparison.test_roc_auc_ovr_macro": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_comparison",
+			          "ConceptualProperty": "test_roc_auc_ovr_macro"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ROC-AUC": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "model_comparison.cv_f1_macro_mean": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "model_comparison",
+			          "ConceptualProperty": "cv_f1_macro_mean"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "CV macro F1": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "predictions.predicted_restaurants": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "predictions",
+			          "ConceptualProperty": "Predicted Restaurants"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Restaurants": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "predictions.predicted_class": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "predictions",
+			          "ConceptualProperty": "predicted_class"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Predicted class": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.avg_rating_india": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "Avg Rating (India)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Avg rating": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.log10_votes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "Log10 Votes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "log10(votes)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.t10_locality_avg_rating": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "T10 Locality Avg Rating"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Avg rating": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.t10_locality_avg_votes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "T10 Locality Avg Votes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Avg votes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "restaurants.t10_locality_avg_price_range": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "restaurants",
+			          "ConceptualProperty": "T10 Locality Avg Price Range"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Avg price range": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

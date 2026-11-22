@@ -1,0 +1,35 @@
+{
+  "name": "Restaurant Intelligence - Theme B (Slate + Red)",
+  "dataColors": ["#CB202D", "#8E1520", "#E8838B", "#5C5C66", "#F5C6CA", "#1F2329", "#E23744"],
+  "foreground": "#18181B",
+  "foregroundNeutralSecondary": "#5C5C66",
+  "foregroundNeutralTertiary": "#5C5C66",
+  "background": "#FFFFFF",
+  "backgroundLight": "#F4F4F5",
+  "backgroundNeutral": "#E4E4E7",
+  "tableAccent": "#CB202D",
+  "maximum": "#8E1520",
+  "center": "#E8838B",
+  "minimum": "#F5C6CA",
+  "textClasses": {
+    "callout": { "fontSize": 26, "fontFace": "Segoe UI Semibold", "color": "#18181B" },
+    "title": { "fontSize": 12, "fontFace": "Segoe UI Semibold", "color": "#18181B" },
+    "header": { "fontSize": 12, "fontFace": "Segoe UI Semibold", "color": "#18181B" },
+    "label": { "fontSize": 10, "fontFace": "Segoe UI", "color": "#5C5C66" }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [{ "show": true, "color": { "solid": { "color": "#FFFFFF" } }, "transparency": 0 }],
+        "border": [{ "show": true, "color": { "solid": { "color": "#E4E4E7" } }, "radius": 8 }],
+        "dropShadow": [{ "show": false }]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [{ "color": { "solid": { "color": "#F4F4F5" } }, "transparency": 0 }],
+        "outspace": [{ "color": { "solid": { "color": "#F4F4F5" } }, "transparency": 0 }]
+      }
+    }
+  }
+}

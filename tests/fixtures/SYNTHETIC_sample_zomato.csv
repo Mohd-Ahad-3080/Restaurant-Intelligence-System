@@ -1,0 +1,17 @@
+Restaurant ID,Restaurant Name,Country Code,City,Address,Locality,Locality Verbose,Longitude,Latitude,Cuisines,Average Cost for two,Currency,Has Table booking,Has Online delivery,Is delivering now,Switch to order menu,Price range,Aggregate rating,Rating color,Rating text,Votes
+900001,TEST Synthetic 01,1,New Delhi,1 Test Road,Test Area A,"Test Area A, New Delhi",77.2,28.6,"North Indian, Chinese",500,Indian Rupees(Rs.),Yes,Yes,No,No,2,4.1,Green,Very Good,250
+900002,TEST Synthetic 02,1,New Delhi,2 Test Road,Test Area A,"Test Area A, New Delhi",77.21,28.61,Cafe,300,Indian Rupees(Rs.),No,No,No,No,1,3.2,Orange,Average,40
+900003,TEST Synthetic 03,1,New Delhi,3 Test Road,Test Area B,"Test Area B, New Delhi",77.22,28.62,Chinese,800,Indian Rupees(Rs.),Yes,Yes,No,No,3,3.8,Yellow,Good,120
+900004,TEST Synthetic 04 zero coords and not rated,1,New Delhi,4 Test Road,Test Area B,"Test Area B, New Delhi",0,0,Fast Food,200,Indian Rupees(Rs.),No,yes,No,No,1,0,White,Not rated,2
+900005,TEST Synthetic 05 zero cost,1,Gurgaon,5 Test Road,Test Area C,"Test Area C, Gurgaon",77.03,28.46,"Italian, Pizza",0,Indian Rupees(Rs.),No,No,No,No,1,3.5,Yellow,Good,15
+900006,TEST Synthetic 06 missing cuisines,1,Gurgaon,6 Test Road,Test Area C,"Test Area C, Gurgaon",77.04,28.47,,600,Indian Rupees(Rs.),No,Yes,No,No,2,2.4,Red,Poor,8
+900007,TEST Synthetic 07,1,Gurgaon,7 Test Road,Test Area D,"Test Area D, Gurgaon",77.05,28.48,North Indian,1500,Indian Rupees(Rs.),Yes,No,No,No,3,4.6,Dark Green,Excellent,900
+900008,TEST Synthetic 08,216,Albany,8 Test Street,Test Downtown,"Test Downtown, Albany",-84.15,31.58,"American, Burger",25,Dollar($),No,No,No,No,2,4.0,Green,Very Good,300
+900009,TEST Synthetic 09,216,Albany,9 Test Street,Test Downtown,"Test Downtown, Albany",-84.16,31.59,Mexican,30,Dollar($),No,No,No,No,2,3.6,Yellow,Good,60
+900010,TEST Synthetic 10,216,Albany,10 Test Street,Test Uptown,"Test Uptown, Albany",-84.17,31.6,Pizza,40,Dollar($),No,No,No,No,3,4.5,Dark Green,Excellent,500
+900011,TEST Synthetic 11 currency mislabel,162,Makati City,11 Test Avenue,Test Poblacion,"Test Poblacion, Makati City",121.02,14.56,Filipino,1200,Botswana Pula(P),Yes,No,No,No,3,4.2,Green,Very Good,150
+900012,TEST Synthetic 12 currency mislabel,162,Makati City,12 Test Avenue,Test Poblacion,"Test Poblacion, Makati City",121.03,14.57,Japanese,900,Botswana Pula(P),No,No,No,No,3,3.9,Yellow,Good,70
+900013,TEST Synthetic 13 unknown country code,999,Testville,13 Test Lane,Test Centre,"Test Centre, Testville",10.0,10.0,Seafood,100,Test Dollar(TD),No,No,No,No,1,3.0,Orange,Average,10
+900014,  TEST  Synthetic 14 extra spaces ,1,New Delhi,14 Test Road,Test Area A,"Test Area A, New Delhi",77.23,28.63,"  Mughlai,North Indian ",450,Indian Rupees(Rs.),No,No,No,No,2,0,White,Not rated,0
+900001,TEST Synthetic 15 duplicate ID,1,New Delhi,15 Test Road,Test Area A,"Test Area A, New Delhi",77.24,28.64,Cafe,350,Indian Rupees(Rs.),No,No,No,No,1,3.1,Orange,Average,20
+900002,TEST Synthetic 02,1,New Delhi,2 Test Road,Test Area A,"Test Area A, New Delhi",77.21,28.61,Cafe,300,Indian Rupees(Rs.),No,No,No,No,1,3.2,Orange,Average,40

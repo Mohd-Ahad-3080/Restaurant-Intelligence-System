@@ -1,0 +1,41 @@
+table popularity_classes
+	lineageTag: f8d8f6d1-c520-4eb7-bc9d-13d0fe1987f4
+
+	column popularity_class
+		dataType: string
+		lineageTag: 332c6830-e510-4d52-a1f8-5021a16b43cf
+		summarizeBy: none
+		sourceColumn: popularity_class
+
+		annotation SummarizationSetBy = Automatic
+
+	column class_order
+		dataType: int64
+		formatString: 0
+		lineageTag: eec370e3-86eb-40c7-b79b-e6ab2cc2389a
+		summarizeBy: none
+		sourceColumn: class_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column class_color
+		dataType: string
+		lineageTag: 2a1ba2e3-4820-4448-b1fe-59f734f40474
+		summarizeBy: none
+		sourceColumn: class_color
+
+		annotation SummarizationSetBy = Automatic
+
+	partition popularity_classes = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("D:\restaurant-intelligence\dashboards\powerbi\powerbi_data.xlsx"), null, true),
+				    popularity_classes_Sheet = Source{[Item="popularity_classes",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(popularity_classes_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"popularity_class", type text}, {"class_order", Int64.Type}, {"class_color", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

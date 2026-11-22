@@ -1,0 +1,28 @@
+table services
+	lineageTag: b0c502fa-213c-58f1-a9f1-37e4e4443d72
+
+	column service
+		dataType: string
+		lineageTag: 21319030-f6b1-59d6-afac-0217b3845762
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [service]
+		sortByColumn: service_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column service_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 8b73a35c-ffee-5159-9d09-9e1d4062de64
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [service_order]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition services = calculated
+		mode: import
+		source = DATATABLE ( "service", STRING, "service_order", INTEGER, { { "Table booking", 1 }, { "Online delivery", 2 } } )
+
+	annotation PBI_Id = b9dd0b95433e5f1ba59902ddcfc6562a

@@ -1,0 +1,5 @@
+restaurant_id,restaurant_name,city,country,locality,cuisines,avg_cost_for_two,currency,price_range,aggregate_rating,votes,has_online_delivery,has_table_booking
+910001,TEST Synthetic UK 1,Springfield,United Kingdom,Test Centre,British,40,Pounds(£),2,4.2,120,0,1
+910002,TEST Synthetic UK 2,Springfield,United Kingdom,Test Centre,Italian,90,Pounds(£),3,3.9,60,0,0
+910003,TEST Synthetic US 1,Springfield,United States,Test Downtown,American,30,Dollar($),2,4.0,200,0,0
+910004,TEST Synthetic US 2,Springfield,United States,Test Downtown,Burger,15,Dollar($),1,3.6,45,0,0

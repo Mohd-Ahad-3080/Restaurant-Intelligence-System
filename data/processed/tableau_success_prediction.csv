@@ -1,0 +1,41 @@
+section,item,series,score,count,share,item_order,series_order
+comparison,Baseline (majority class),Accuracy,0.33558406482106684,,,0,0
+comparison,Baseline (majority class),Macro F1,0.1675092686215032,,,0,1
+comparison,Logistic Regression,Accuracy,0.550303848750844,,,1,0
+comparison,Logistic Regression,Macro F1,0.5428135970817932,,,1,1
+comparison,Decision Tree,Accuracy,0.5665091154625254,,,2,0
+comparison,Decision Tree,Macro F1,0.5613999057615806,,,2,1
+comparison,Random Forest,Accuracy,0.5806887238352465,,,3,0
+comparison,Random Forest,Macro F1,0.5732496565702033,,,3,1
+comparison,Gradient Boosting,Accuracy,0.613099257258609,,,4,0
+comparison,Gradient Boosting,Macro F1,0.6105715721749477,,,4,1
+confusion,Low,Low,,329.0,0.6619718309859155,0,0
+confusion,Low,Medium,,122.0,0.2454728370221328,0,1
+confusion,Low,High,,46.0,0.0925553319919517,0,2
+confusion,Medium,Low,,132.0,0.26993865030674846,1,0
+confusion,Medium,Medium,,231.0,0.4723926380368098,1,1
+confusion,Medium,High,,126.0,0.25766871165644173,1,2
+confusion,High,Low,,41.0,0.08282828282828283,2,0
+confusion,High,Medium,,106.0,0.21414141414141413,2,1
+confusion,High,High,,348.0,0.703030303030303,2,2
+class_split,Low,Actual,,2482.0,0.33526948534377954,0,0
+class_split,Medium,Actual,,2446.0,0.3304065919221937,1,0
+class_split,High,Actual,,2475.0,0.3343239227340267,2,0
+class_split,Low,Predicted,,2634.0,0.35580170201269756,0,1
+class_split,Medium,Predicted,,2285.0,0.3086586518978792,1,1
+class_split,High,Predicted,,2484.0,0.3355396460894232,2,1
+importance,Latitude,Importance,0.07729137499869258,,,0,0
+importance,City,Importance,0.07324668640430496,,,1,0
+importance,Cost percentile within country,Importance,0.060293168379532455,,,2,0
+importance,Longitude,Importance,0.05036961452105844,,,3,0
+importance,Restaurants in locality (log),Importance,0.0362637177449639,,,4,0
+importance,Online delivery,Importance,0.03330749967426729,,,5,0
+importance,Price range,Importance,0.013535942588565253,,,6,0
+importance,Number of branches (log),Importance,0.012451396689264194,,,7,0
+importance,Has valid coordinates,Importance,0.010447441338904106,,,8,0
+importance,Number of cuisines,Importance,0.007877247711396007,,,9,0
+importance,Country,Importance,0.0055722499308240026,,,10,0
+importance,Cuisine: North Indian,Importance,0.005116542055803308,,,11,0
+importance,Cuisine: Fast Food,Importance,0.0039233775171304665,,,12,0
+importance,Cuisine: Street Food,Importance,0.003293439174626023,,,13,0
+importance,Cuisine: Bakery,Importance,0.003093204160047025,,,14,0

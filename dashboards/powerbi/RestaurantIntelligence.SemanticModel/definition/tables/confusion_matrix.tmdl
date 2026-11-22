@@ -1,0 +1,94 @@
+table confusion_matrix
+	lineageTag: 2e6bc21a-570b-469f-8348-3b1d01734cad
+
+	measure 'Confusion Count' = SUM ( confusion_matrix[count] )
+		formatString: #,0
+		lineageTag: bcf90ca2-a672-5055-9e7f-586cc3cebaa9
+
+	measure 'Confusion % of Actual' = SUM ( confusion_matrix[pct_of_actual] )
+		formatString: 0%
+		lineageTag: 1b857552-5e81-5dcb-b749-ea35d98d3fae
+
+	measure 'Confusion Cell Color' = IF ( HASONEVALUE ( confusion_matrix[actual] ) && HASONEVALUE ( confusion_matrix[predicted] ) && MAX ( confusion_matrix[is_correct] ) = 1, "#F5C6CA", "#FFFFFF" )
+		lineageTag: 01ba1c3f-7ac6-508e-87b8-78d32cd1f4e6
+
+	measure 'Title p4_confusion' = IF ( ISBLANK ( [Confusion Count] ), "No data for this selection", "Predicted vs actual (test set, 1,481 restaurants; red = correct)" )
+		lineageTag: cdfa8649-d5c0-5e02-9c83-05b34c4c48b8
+
+	column actual
+		dataType: string
+		lineageTag: ed152e44-f719-4e42-90d8-f77e4141b3b2
+		summarizeBy: none
+		sourceColumn: actual
+		sortByColumn: actual_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column predicted
+		dataType: string
+		lineageTag: c5dd3788-21fc-4b26-89c1-7bef407e710b
+		summarizeBy: none
+		sourceColumn: predicted
+		sortByColumn: predicted_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column count
+		dataType: int64
+		formatString: 0
+		lineageTag: 840ea90a-4e6a-4da4-b42d-2287383bbf3f
+		summarizeBy: sum
+		sourceColumn: count
+
+		annotation SummarizationSetBy = Automatic
+
+	column pct_of_actual
+		dataType: double
+		lineageTag: eaed5060-c976-405d-9b00-97fcb3bd7a56
+		summarizeBy: sum
+		sourceColumn: pct_of_actual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column actual_order
+		dataType: int64
+		formatString: 0
+		lineageTag: d3ac2d0c-c99b-4f9b-b411-b7e089cf2e2f
+		summarizeBy: sum
+		sourceColumn: actual_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column predicted_order
+		dataType: int64
+		formatString: 0
+		lineageTag: c85fa5e2-b340-4f42-8fae-bdaf49b97a39
+		summarizeBy: sum
+		sourceColumn: predicted_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_correct
+		dataType: int64
+		formatString: 0
+		lineageTag: 803c2af0-381f-4461-be20-2e71af848609
+		summarizeBy: sum
+		sourceColumn: is_correct
+
+		annotation SummarizationSetBy = Automatic
+
+	partition confusion_matrix = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("D:\restaurant-intelligence\dashboards\powerbi\powerbi_data.xlsx"), null, true),
+				    confusion_matrix_Sheet = Source{[Item="confusion_matrix",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(confusion_matrix_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"actual", type text}, {"predicted", type text}, {"count", Int64.Type}, {"pct_of_actual", type number}, {"actual_order", Int64.Type}, {"predicted_order", Int64.Type}, {"is_correct", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

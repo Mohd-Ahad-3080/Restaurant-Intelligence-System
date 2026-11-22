@@ -1,0 +1,70 @@
+table model_metrics_long
+	lineageTag: f2db1313-219d-4817-a930-39518614f297
+
+	column model
+		dataType: string
+		lineageTag: df6bd775-f6f1-42eb-abf5-47632a6d5843
+		summarizeBy: none
+		sourceColumn: model
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 3f92442a-e342-46fc-9049-4289ab99b938
+		summarizeBy: sum
+		sourceColumn: model_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_best
+		dataType: int64
+		formatString: 0
+		lineageTag: fb249782-78e4-45ea-878d-f88d40aa54cf
+		summarizeBy: sum
+		sourceColumn: is_best
+
+		annotation SummarizationSetBy = Automatic
+
+	column value
+		dataType: double
+		lineageTag: 0203ce26-fb12-413f-84ce-db3bb4b8f85e
+		summarizeBy: sum
+		sourceColumn: value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column metric
+		dataType: string
+		lineageTag: 49dc1980-5e29-4353-93c8-8a3da9ef1253
+		summarizeBy: none
+		sourceColumn: metric
+		sortByColumn: metric_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column metric_order
+		dataType: int64
+		formatString: 0
+		lineageTag: e5784fe6-3c32-4c1b-8da9-e7a54bd99c44
+		summarizeBy: sum
+		sourceColumn: metric_order
+
+		annotation SummarizationSetBy = Automatic
+
+	partition model_metrics_long = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("D:\restaurant-intelligence\dashboards\powerbi\powerbi_data.xlsx"), null, true),
+				    model_metrics_long_Sheet = Source{[Item="model_metrics_long",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(model_metrics_long_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"model", type text}, {"model_order", Int64.Type}, {"is_best", Int64.Type}, {"value", type number}, {"metric", type text}, {"metric_order", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,11 @@
+country_name,city,restaurants,avg_rating,online_delivery_pct
+India,New Delhi,5473,3.3,27.2
+India,Gurgaon,1118,3.33,38.0
+India,Noida,1080,3.16,33.7
+India,Faridabad,251,3.1,13.9
+India,Ghaziabad,25,3.1,40.0
+India,Guwahati,21,4.19,0.0
+India,Lucknow,21,4.2,0.0
+India,Ahmedabad,21,4.16,52.4
+India,Bhubaneshwar,21,3.98,0.0
+India,Amritsar,21,3.69,0.0

@@ -1,0 +1,152 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1073.2033756433289,
+            "y": 482.66634775446346
+          },
+          "nodeIndex": "confusion_matrix",
+          "nodeLineageTag": "2e6bc21a-570b-469f-8348-3b1d01734cad",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1357.2033756433289,
+            "y": 506.66634775446346
+          },
+          "nodeIndex": "feature_importance",
+          "nodeLineageTag": "34d6fbd2-56df-43c7-b0c0-27fb2264fbc7",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 549.26380660645191,
+            "y": 301.73341449367092
+          },
+          "nodeIndex": "model_comparison",
+          "nodeLineageTag": "526a3985-9c7c-4997-a98f-225b3188c45c",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 839.20337564332885,
+            "y": 318.77403985731451
+          },
+          "nodeIndex": "model_metrics_long",
+          "nodeLineageTag": "f2db1313-219d-4817-a930-39518614f297",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 123.28858786999638,
+            "y": 1011.3326955089269
+          },
+          "nodeIndex": "popularity_classes",
+          "nodeLineageTag": "f8d8f6d1-c520-4eb7-bc9d-13d0fe1987f4",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 337.86102451180574,
+            "y": -50
+          },
+          "nodeIndex": "predictions",
+          "nodeLineageTag": "b4928596-e85f-4371-87dd-079b929792bb",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 297.51960510617812
+          },
+          "nodeIndex": "restaurant_cuisines",
+          "nodeLineageTag": "799a502b-7383-4f4e-b78a-52c9ec3f9341",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 416.052148954441,
+            "y": 660.33796817953669
+          },
+          "nodeIndex": "restaurants",
+          "nodeLineageTag": "c46063e0-b43e-4d23-8093-ad69fbd9e800",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1641.2033756433289,
+            "y": 482.66634775446346
+          },
+          "nodeIndex": "robustness_checks",
+          "nodeLineageTag": "ffbe0076-4921-43ef-ad00-e22422a09184",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1875.2033756433289,
+            "y": 542.66634775446346
+          },
+          "nodeIndex": "services",
+          "nodeLineageTag": "b0c502fa-213c-58f1-a9f1-37e4e4443d72",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

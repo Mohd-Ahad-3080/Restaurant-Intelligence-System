@@ -1,0 +1,33 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Secrets
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Excel / Office lock files
+~$*
+
+# Large or regenerable exports
+data/interim/*
+!data/interim/.gitkeep
+*.zip
+*.pbix.bak
+dashboards/**/*.bak
+
+# Tableau auto-recovery files (created while a workbook is open)
+*.twbr
+
+# Results of `run_pipeline.py --input <file>` (regenerable)
+outputs/runs/
+
+# Handover package (rebuild with: python scripts/make_handover.py)
+dist/
