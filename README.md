@@ -1,51 +1,91 @@
 # Restaurant Intelligence System
 
-**Restaurant Recommendation and Success Prediction Using Data Analytics**
+**Restaurant recommendation and popularity prediction using data analytics.**
 
-This project analyses public Zomato restaurant data from Kaggle (9,551 restaurants in 15 countries and
-141 cities; CC0 licence; secondary data only). It uses five tools (Python, MySQL, Excel, Power BI and
-Tableau) and a small Streamlit app, and it delivers:
+[Open the live Streamlit app](https://restaurant-intelligence-system-mpzgeltz7a2glsjmyprrff.streamlit.app/)
 
-- a **recommendation engine** that ranks restaurants and shows how each score is made;
-- a **popularity model** that predicts High, Medium or Low popularity on Zomato without data leakage;
-- **dashboards** (6 Power BI pages, 5 Tableau dashboards) and a **what-if app** for predictions and
-  recommendations;
-- a project **report** (short and full versions) with all results.
+This project analyses the public Zomato restaurant dataset from Kaggle: 9,551 restaurants across 15 countries and 141 cities. It includes a recommendation engine, a popularity prediction model, data-quality and exploratory analysis, SQL queries, Excel reports, Power BI and Tableau dashboards, and a browser-based what-if app.
 
-**Start here: `Project_Guide.pdf`** (delivered next to this package). It explains every part in simple
-steps, including the Mac setup. Short technical notes: `docs/HOW_TO_RUN.md` and `docs/MAC_SETUP.md`.
+## Features
 
-## Folder map
-
-| Folder / file | Contents |
-|---|---|
-| `run_pipeline.py` | Runs the whole analysis (`--no-mysql` without a database, `--input <file>` for another file) |
-| `src/` | Python code: loading, checks, cleaning, database link, analysis, model, recommender, dashboard files |
-| `scripts/` | `app.py` (what-if app), `recommend.py`, `predict.py`, `setup_mac.sh`, two dashboard helpers |
-| `sql/` | Database setup, tables, views and the analytical queries |
-| `data/` | `raw/` (original files, never changed), `processed/` (cleaned data), `samples/` (small real sample) |
-| `models/` | The saved popularity model and its settings |
-| `outputs/` | Figures, model results, SQL results, India, unrated and insight tables |
-| `excel/` | Excel workbook with live formulas and charts |
-| `dashboards/` | Power BI (`.pbix`, `.pbip` project, PDF and page images) and Tableau (`.twbx`, images) |
-| `notebooks/` | Exploratory analysis notebook |
-| `report/` | Project report (short and full, `.docx` and `.pdf`) and the Extended Abstract |
-| `docs/` | How to run, Mac setup, viva preparation, and the documents the code generates |
-| `tests/` | Automated tests (`python -m pytest -q`) |
-| `requirements.txt`, `.env.example` | Python libraries, and a template for the MySQL settings (no password included) |
+- Recommend restaurants by city, cuisine, budget, rating, and delivery availability, with a score breakdown.
+- Predict Low, Medium, or High popularity for a restaurant using the saved model.
+- Clean and validate source data, generate analysis outputs, and optionally load data into MySQL.
+- Explore six Power BI pages, five Tableau dashboards, and the Streamlit app.
 
 ## Quick start
 
-macOS: `bash scripts/setup_mac.sh` (see `docs/MAC_SETUP.md`). Windows:
+Python 3.12 or 3.13 is recommended. On macOS, run the included setup script once:
 
+```bash
+bash scripts/setup_mac.sh
+source .venv/bin/activate
 ```
+
+On Windows, create and activate a virtual environment, then install the dependencies:
+
+```powershell
 python -m venv .venv
-.venv\Scripts\activate
+.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
+```
+
+Run the analysis pipeline without MySQL, or start the interactive app:
+
+```bash
 python run_pipeline.py --no-mysql
 streamlit run scripts/app.py
 ```
 
-On Windows, unzip to a short folder such as `C:\RestaurantIntelligence` (the Power BI project has long file
-paths). Power BI Desktop runs only on Windows; on a Mac, use `dashboards/powerbi/exports/RestaurantIntelligence.pdf`.
-The Tableau file `dashboards/tableau/RestaurantIntelligence.twbx` opens on both.
+The Streamlit app offers **Predict** and **Recommend** tabs. MySQL is optional; use `python run_pipeline.py` if you have configured the database.
+
+## App screenshots
+
+### Predict
+
+![Restaurant popularity prediction form](docs/app_screenshots/1_predict_form.png)
+
+![Restaurant popularity prediction result](docs/app_screenshots/2_predict_result.png)
+
+### Recommend
+
+![Restaurant recommendation form](docs/app_screenshots/3_recommend_form.png)
+
+![Restaurant recommendation results](docs/app_screenshots/4_recommend_result.png)
+
+## Dashboards
+
+- **Tableau:** Open `dashboards/tableau/RestaurantIntelligence.twbx` in Tableau Public; the packaged workbook includes its data extracts.
+- **Power BI:** Open `dashboards/powerbi/RestaurantIntelligence.pbix` in Power BI Desktop on Windows. On macOS, view the exported pages in `dashboards/powerbi/exports/RestaurantIntelligence.pdf` or the PNGs.
+
+## Tests
+
+Run the test suite locally:
+
+```bash
+python -m pytest -q
+```
+
+
+
+GitHub Actions runs the test suite automatically on pushes and pull requests.
+
+## Project layout
+
+| Path | Contents |
+|---|---|
+| `run_pipeline.py` | End-to-end data analysis pipeline |
+| `src/` | Data loading, cleaning, analysis, modeling, and recommendation code |
+| `scripts/` | Streamlit app, command-line tools, and setup helpers |
+| `data/` | Raw, processed, and sample datasets |
+| `sql/` | Database schema, views, and analytical queries |
+| `models/`, `outputs/` | Saved model and generated results |
+| `dashboards/` | Power BI and Tableau files and exports |
+| `report/`, `docs/` | Reports and project documentation |
+| `tests/` | Automated tests |
+
+## Configuration and data
+
+`.env.example` is a template for optional MySQL settings. Copy it to `.env` and enter your local settings if needed. **Do not commit `.env` or put passwords, API keys, or other secrets in the repository.**
+
+The project analyzes public Kaggle data; check the dataset's source and license before reusing or redistributing the data.
