@@ -2,7 +2,7 @@
 
 **Restaurant recommendation and popularity prediction using data analytics.**
 
-[Open the live Streamlit app](https://restaurant-intelligence-system-mpzgeltz7a2glsjmyprrff.streamlit.app/)
+[Open the live Streamlit app](https://mohd-ahad-restaurant-intelligence-system.streamlit.app/)
 
 This project analyses public Zomato data from Kaggle: 9,551 restaurant records across 15 countries and 141 cities. It brings together data preparation, exploratory analysis, SQL, predictive modeling, restaurant recommendations, interactive dashboards, and a live Streamlit app.
 
