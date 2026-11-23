@@ -53,10 +53,35 @@ The Streamlit app offers **Predict** and **Recommend** tabs. MySQL is optional; 
 
 ![Restaurant recommendation results](docs/app_screenshots/4_recommend_result.png)
 
-## Dashboards
+## Dashboard gallery
 
-- **Tableau:** Open `dashboards/tableau/RestaurantIntelligence.twbx` in Tableau Public; the packaged workbook includes its data extracts.
-- **Power BI:** Open `dashboards/powerbi/RestaurantIntelligence.pbix` in Power BI Desktop on Windows. On macOS, view the exported pages in `dashboards/powerbi/exports/RestaurantIntelligence.pdf` or the PNGs.
+### Power BI
+
+Six interactive report pages covering the restaurant overview, customers and market, location intelligence, India deep dive, popularity prediction, and insights.
+
+[Open the Power BI PDF export](dashboards/powerbi/exports/RestaurantIntelligence.pdf) · [Power BI Desktop file](dashboards/powerbi/RestaurantIntelligence.pbix)
+
+[![Power BI dashboard overview](dashboards/powerbi/exports/page1_overview.png)](dashboards/powerbi/exports/RestaurantIntelligence.pdf)
+
+More pages: [Customers & market](dashboards/powerbi/exports/page2_customers_market.png) · [Location](dashboards/powerbi/exports/page3_location.png) · [India](dashboards/powerbi/exports/page4_india.png) · [Prediction](dashboards/powerbi/exports/page5_prediction.png) · [Insights](dashboards/powerbi/exports/page6_insights.png)
+
+### Tableau
+
+Five dashboards with packaged data extracts. Open the `.twbx` workbook in Tableau Public.
+
+[Download Tableau workbook](dashboards/tableau/RestaurantIntelligence.twbx)
+
+[![Tableau location intelligence dashboard](dashboards/tableau/exports/tableau_dashboard1_location.jpeg)](dashboards/tableau/RestaurantIntelligence.twbx)
+
+[![Tableau cuisine and pricing dashboard](dashboards/tableau/exports/tableau_dashboard2_cuisine_pricing.jpeg)](dashboards/tableau/RestaurantIntelligence.twbx)
+
+### Excel
+
+The Excel workbook includes the raw sample, data dictionary, quality checks, cleaning log, cleaned data, cuisine pairs, formula-driven summaries, and charts.
+
+[Download the Excel analysis workbook](excel/zomato_phase1_analysis.xlsx)
+
+Power BI Desktop is available for Windows; on macOS, use the PDF and PNG exports. Tableau packaged workbooks open in Tableau Public.
 
 ## Tests
 
