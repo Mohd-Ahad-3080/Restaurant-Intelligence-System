@@ -4,7 +4,21 @@
 
 [Open the live Streamlit app](https://restaurant-intelligence-system-mpzgeltz7a2glsjmyprrff.streamlit.app/)
 
-This project analyses the public Zomato restaurant dataset from Kaggle: 9,551 restaurants across 15 countries and 141 cities. It includes a recommendation engine, a popularity prediction model, data-quality and exploratory analysis, SQL queries, Excel reports, Power BI and Tableau dashboards, and a browser-based what-if app.
+This project analyses public Zomato data from Kaggle: 9,551 restaurant records across 15 countries and 141 cities. It brings together data preparation, exploratory analysis, SQL, predictive modeling, restaurant recommendations, interactive dashboards, and a live Streamlit app.
+
+## Project highlights
+
+| Measure | Result |
+|---|---:|
+| Restaurant records analyzed | 9,551 |
+| Countries and cities | 15 countries · 141 cities |
+| Rated records used for modeling | 7,403 |
+| Best classifier | Gradient Boosting |
+| Test accuracy | 61.3% (33.6% majority-class baseline) |
+| Test macro-F1 / ROC-AUC | 0.611 / 0.795 |
+| Analytical SQL queries | 28 |
+
+The popularity target is based on vote tertiles among rated restaurants. Votes and rating fields are excluded from model inputs to prevent target leakage. Results are observational and reflect the dataset's uneven geographic coverage; see the [model results and limitations](docs/model_results.md).
 
 ## Features
 
@@ -38,6 +52,15 @@ streamlit run scripts/app.py
 ```
 
 The Streamlit app offers **Predict** and **Recommend** tabs. MySQL is optional; use `python run_pipeline.py` if you have configured the database.
+
+## Reports and analysis
+
+- [Full project report (PDF)](report/Project_Report_Full.pdf)
+- [Project report (PDF)](report/Project_Report.pdf)
+- [Model results and evaluation](docs/model_results.md)
+- [Key data insights](docs/insights.md)
+- [India market analysis](docs/india_deep_dive.md)
+- [How to run the project](docs/HOW_TO_RUN.md) · [Mac setup](docs/MAC_SETUP.md)
 
 ## App screenshots
 
@@ -93,7 +116,7 @@ python -m pytest -q
 
 
 
-GitHub Actions runs the test suite automatically on pushes and pull requests.
+Run tests locally with `python -m pytest -q`. The project includes optional MySQL- and Tableau-dependent checks; these may be skipped when the corresponding software or service is unavailable.
 
 ## Project layout
 
